@@ -1,0 +1,147 @@
+.nav {
+	position: relative;
+	padding: 5% 7.5%;
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.logo {
+	display: flex;
+	flex-direction: column;
+	z-index: 2;
+}
+
+.swanson {
+	font-family: 'Bangla MN', serif;
+	font-size: 2.2rem;
+	font-weight: 100;
+}
+
+.custom {
+	font-size: 1.1rem;
+	text-transform: uppercase;
+	position: relative;
+	bottom: .75rem;
+	font-weight: 400;
+}
+
+.menu {
+	width: 100vw;
+	height: 100vh;
+	padding: 5% 7.5%;
+	background: white;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	visibility: hidden;
+	transition: var(--t1);
+	display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+	gap: 2rem;
+}
+
+.menuItem {
+	font-size: 2rem;
+	font-weight: 300;
+  text-transform: uppercase;
+  color: black;
+}
+
+.menuOpen {
+	composes: menu;
+	visibility: visible;
+	opacity: 1;
+}
+
+.icon {
+	width: 2.5rem;
+	height: 2.5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: transparent;
+	position: relative;
+	transform: rotate(45deg);
+	gap: .5rem;
+	transition: var(--t1);
+}
+
+.bar {
+	background: black;
+	transition: var(--t1);
+	width: .2rem;
+	border-radius: 50px;
+}
+
+.bar1 {
+	composes: bar;
+	height: 50%;
+}
+
+.bar2 {
+	composes: bar;
+	height: 100%;
+	opacity: 1;
+}
+
+.bar3 {
+	composes: bar;
+	height: 100%;
+}
+
+.bar4 {
+	composes: bar;
+	height: 50%;
+}
+
+.iconCross {
+	composes: icon;
+	transform: rotate(270deg) 
+	// translateX(.2rem);
+}
+
+.iconCross > .bar1 {
+	opacity: 0;
+	position: absolute;
+}
+
+.iconCross > .bar2 {
+	transform: rotate(45deg);
+	position: absolute;
+}
+
+.iconCross > .bar3 {
+	position: absolute;
+	transform: rotate(-45deg);
+}
+
+.iconCross > .bar4 {
+	opacity: 0;
+	position: absolute;
+}
+
+@media screen and (min-width: 1366px) {
+	.nav {
+		padding: 2.5% 20%;
+	}
+	.menu {
+		padding: 0;
+		width: unset;
+		height: unset;
+		position: unset;
+		opacity: 1;
+		visibility: visible;
+		flex-direction: row;
+	}
+	.menuItem {
+		font-size: 1.5rem;
+	}
+	.icon {
+		display: none;
+	}
+}
