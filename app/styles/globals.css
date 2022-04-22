@@ -1,9 +1,11 @@
-:root {
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500&display=swap');
+@font-face {
+	font-family: 'Bangla MN';
+	src: url('./bangla-mn.ttf');
 }
 
-html {
-  box-sizing: border-box;
+:root {
+	box-sizing: border-box;
   font-size: 10px;
 }
 
@@ -14,7 +16,7 @@ html {
 body, menu, button, h1, h2, h3, h4, h5, h6, p, ol, ul {
   margin: 0;
   padding: 0;
-  font-weight: normal;
+  /* font-weight: normal; */
   border: none;
 }
 
@@ -32,18 +34,14 @@ body {
   overflow-x: hidden;
 }
 
-/* body::-webkit-scrollbar {
-  width: 0px;
-} */
-
 @media screen and (min-width: 414px) {
-  html {
+  :root {
     font-size: 11px;
   }
 }
 
 @media screen and (min-width: 768px) {
-  html {
+  :root {
     font-size: 12px;
   }
 }

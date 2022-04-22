@@ -1,5 +1,3 @@
-// import client from '../client'
-// import Image from 'next/image'
 import styles from '../styles/Home.module.scss'
 
 export default function Home() {
@@ -11,15 +9,3 @@ export default function Home() {
 		</main>
 	)
 }
-
-// export async function getStaticProps(context) {
-// 	const ansleyKitchen = await client.fetch(
-// 		`*[_type == 'collection']`
-// 	)
-
-//   return {
-//     props: {
-// 			ansleyKitchen
-// 		} // will be passed to the page component as props
-//   }
-// }
