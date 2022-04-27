@@ -1,7 +1,12 @@
+import NavTop from '../components/NavTop'
+import AboutMosaic from '../components/AboutMosaic'
+import styles from '../styles/About.module.scss'
+
 export default function About() {
 	return (
-		<main>
-			<h1>This is the about page.</h1>
-		</main>
+		<div className={styles.about} >
+			<NavTop />
+			<AboutMosaic />
+		</div>
 	)
 }
