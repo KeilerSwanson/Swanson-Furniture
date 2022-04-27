@@ -10,20 +10,20 @@
 .logo {
 	display: flex;
 	flex-direction: column;
-	z-index: 2;
+	z-index: 3;
 }
 
 .swanson {
 	font-family: 'Bangla MN', serif;
-	font-size: 2.2rem;
+	font-size: 2.15rem;
 	font-weight: 100;
 }
 
 .custom {
-	font-size: 1.1rem;
+	font-size: 1.15rem;
 	text-transform: uppercase;
 	position: relative;
-	bottom: .75rem;
+	bottom: 1rem;
 	font-weight: 400;
 }
 
@@ -43,11 +43,12 @@
   justify-content: center;
   align-items: flex-start;
 	gap: 2rem;
+	z-index: 2;
 }
 
 .menuItem {
-	font-size: 2rem;
-	font-weight: 300;
+	font-size: 1.8rem;
+	font-weight: 400;
   text-transform: uppercase;
   color: black;
 }
@@ -69,6 +70,7 @@
 	transform: rotate(45deg);
 	gap: .5rem;
 	transition: var(--t1);
+	z-index: 3;
 }
 
 .bar {
