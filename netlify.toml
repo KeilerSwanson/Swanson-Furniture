@@ -15,4 +15,4 @@
   publish = "app/.next"
 
   # Default build command.
-  command = "npm run build"
+  command = "next build"
