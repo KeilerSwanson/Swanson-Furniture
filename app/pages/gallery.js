@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Image from 'next/image'
 import client from '../client'
 import imageUrlBuilder from '@sanity/image-url'
@@ -13,9 +14,26 @@ function urlFor(source) {
 }
 
 export default function GalleryPage({ cabinetry, tables, stairs, beds, doors }) {
+	const [modal, setModal] = useState({
+		open: false,
+		url: ''
+	})
+
+	function openModal(target) {
+		setModal({
+			open: true,
+			url: target.dataset.url
+		})
+	}
+
+	function closeModal() {
+		setModal({
+			open: false,
+			url: modal.url
+		})
+	}
 
 	const categories = [cabinetry, tables, stairs, beds, doors].map(category => {
-
 		return (
 			<div className={styles.category}>
 				<h1 className={styles.title}>{category.title}</h1>
@@ -25,7 +43,10 @@ export default function GalleryPage({ cabinetry, tables, stairs, beds, doors }) 
 							return (
 								collection.images.map(image => {
 									return (
-										<div className={styles.image}>
+										<div 
+											className={styles.image}
+											data-url={`${urlFor(image)}`}	
+										>
 											<Image 
 												src={`${urlFor(image)}`}
 												alt='' 
@@ -47,10 +68,17 @@ export default function GalleryPage({ cabinetry, tables, stairs, beds, doors }) 
 	return (
 		<div className={styles.galleryPage}>
 			<NavTop />
-			<div className={styles.gallery}>
+			<div 
+				className={styles.gallery}
+				onClick={(e) => openModal(e.target)}
+			>
 				{categories}
 			</div>
-			<Modal />
+			<Modal 
+				open={modal.open}	
+				url={modal.url}
+				closeModal={closeModal}
+			/>
 		</div>
 	)
 }

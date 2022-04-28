@@ -1,17 +1,15 @@
 .galleryPage {
+	position: relative;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 }
 
 .gallery {
-	// display: grid;
-	// position: relative;
-	// grid-template-columns: 1fr 1fr;
-	// gap: 1rem;
 	display: flex;
 	flex-direction: column;
 	padding: 0 7.5%;
+	margin-bottom: 10%;
 }
 
 .category {
@@ -32,12 +30,19 @@
 	padding: 5% 0;
 }
 
+.image span, .image img {
+	pointer-events: none;
+}
+
 .image img {
 	border-radius: .5rem;
 }
 
 @media screen and (min-width: 768px) {
-	.category {
+	.gallery {
+		// padding: 0 7.5%;
+	}
+	.images {
 		grid-template-columns: 1fr 1fr 1fr;
 	}
 }
