@@ -33,11 +33,11 @@
 }
 
 .arrow::before {
-	transform: rotate(45deg);
+	transform: rotate(45deg), translate(-.5rem, -.5rem);
 }
 
 .arrow::after {
-	transform: rotate(-45deg);
+	transform: rotate(-45deg), translate(-.5rem, .5rem);
 }
 
 @media screen and (min-width: 1366px) {
