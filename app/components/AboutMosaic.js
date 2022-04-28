@@ -9,7 +9,7 @@ export default function AboutMosaic() {
 			<div className={styles.image}>
 				<Image 
 					src={dadWork}
-					alt='Scott Swanson hand-planing a table.'	
+					alt='Scott Swanson hand-planing a table'	
 					layout='fill'
 					objectFit='cover'
 					priority
@@ -18,7 +18,7 @@ export default function AboutMosaic() {
 			<div className={styles.image}>
 				<Image 
 					src={dadSmile}
-					alt='Scott Swanson hand-planing a table.'	
+					alt='Scott Swanson smiling'	
 					layout='fill'
 					objectFit='cover'
 					priority

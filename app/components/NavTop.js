@@ -7,7 +7,10 @@ export default function NavTop() {
 	const menuClass = menuOpen ? styles.menuOpen : styles.menu
 	const iconClass = menuOpen ? styles.iconCross : styles.icon
 
-	const toggleMenu = () => setMenuOpen(!menuOpen)
+	// const toggleMenu = () => setMenuOpen(!menuOpen)
+	function toggleMenu() {
+		setMenuOpen(!menuOpen)
+	}
 
 	return (
 		<nav className={styles.nav}>

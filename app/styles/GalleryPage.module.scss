@@ -5,11 +5,31 @@
 }
 
 .gallery {
+	// display: grid;
+	// position: relative;
+	// grid-template-columns: 1fr 1fr;
+	// gap: 1rem;
+	display: flex;
+	flex-direction: column;
+	padding: 0 7.5%;
+}
+
+.category {
+	display: flex;
+	flex-direction: column;
+}
+
+.title {
+
+}
+
+.images {
 	display: grid;
 	position: relative;
 	grid-template-columns: 1fr 1fr;
 	gap: 1rem;
-	padding: 0 7.5%;
+	// padding: 0 7.5%;
+	padding: 5% 0;
 }
 
 .image img {
@@ -17,7 +37,7 @@
 }
 
 @media screen and (min-width: 768px) {
-	.gallery {
+	.category {
 		grid-template-columns: 1fr 1fr 1fr;
 	}
 }

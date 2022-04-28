@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import client from '../client'
 import imageUrlBuilder from '@sanity/image-url'
+// import { formatCatTitle } from '../lib/utils'
 import NavTop from '../components/NavTop'
 import Gallery from '../components/Gallery'
 import Modal from '../components/Modal'
@@ -11,34 +12,43 @@ function urlFor(source) {
   return builder.image(source)
 }
 
-export default function GalleryPage({ collections }) {
-	const images = collections.map(collection => {
+export default function GalleryPage({ cabinetry, tables, stairs, beds, doors }) {
+
+	const categories = [cabinetry, tables, stairs, beds, doors].map(category => {
+
 		return (
-			collection.images.map(image => {
-				const url = urlFor(image)
-				console.log({url})
-				return (
-					<div className={styles.image}>
-						<Image 
-							src={`${urlFor(image)}`}
-							alt='' 
-							// layout='fill'
-							objectFit='cover'
-							width={400}
-							height={400}
-						/>
-					</div>
-				)
-			})
+			<div className={styles.category}>
+				<h1 className={styles.title}>{category.title}</h1>
+				<div className={styles.images}>
+					{
+						category.collections.map(collection => {
+							return (
+								collection.images.map(image => {
+									return (
+										<div className={styles.image}>
+											<Image 
+												src={`${urlFor(image)}`}
+												alt='' 
+												objectFit='cover'
+												width={400}
+												height={400}
+											/>
+										</div>
+									)
+								})
+							)
+						})
+					}
+				</div>	
+			</div>
 		)
 	})
 
 	return (
 		<div className={styles.galleryPage}>
 			<NavTop />
-			{/* <Gallery tiles={images} /> */}
 			<div className={styles.gallery}>
-				{images}
+				{categories}
 			</div>
 			<Modal />
 		</div>
@@ -46,13 +56,45 @@ export default function GalleryPage({ collections }) {
 }
 
 export async function getStaticProps() {
-	const collections = await client.fetch(
-		`*[_type == 'collection']`
+	const cabinetry = await client.fetch(
+		`*[_type == 'collection' && category == 'cabinetry-shelving']{ images }`
 	)
+	const tables = await client.fetch(
+		`*[_type == 'collection' && category == 'tables-chairs']{ images }`
+	)
+	const stairs = await client.fetch(
+		`*[_type == 'collection' && category == 'stairs-rails']{ images }`
+	)
+	const beds = await client.fetch(
+		`*[_type == 'collection' && category == 'beds']{ images }`
+	)
+	const doors = await client.fetch(
+		`*[_type == 'collection' && category == 'doors']{ images }`
+	)
+	
 
   return {
     props: {
-			collections
+			cabinetry: {
+				title: 'Cabinetry & Shelving',
+				collections: cabinetry
+			},
+			tables: {
+				title: 'Tables & Chairs',
+				collections: tables
+			},
+			stairs: {
+				title: 'Stairs & Rails',
+				collections: stairs
+			},
+			beds: {
+				title: 'Beds',
+				collections: beds
+			},
+			doors: {
+				title: 'Doors',
+				collections: doors
+			},
 		}
   }
 }
