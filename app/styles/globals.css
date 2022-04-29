@@ -3,12 +3,16 @@
 	font-family: 'Bangla MN';
 	src: url('./bangla-mn.ttf');
 }
+@font-face {
+	font-family: 'Stigma';
+	src: url('./stigma.ttf')
+}
 
 :root {
 	box-sizing: border-box;
 	font-family: 'Inter', sans-serif;
   font-size: 10px;
-
+	--fancy: 'Stigma';
 	--t1: .15s ease-in-out;
 }
 
@@ -20,7 +24,7 @@
 	color: inherit;
 }
 
-body, menu, button, h1, h2, h3, h4, h5, h6, p, ol, ul {
+body, menu, button, h1, h2, h3, h4, h5, h6, p, ol, ul, blockquote {
   margin: 0;
   padding: 0;
   border: none;

@@ -30,6 +30,10 @@
 	padding: 5% 0;
 }
 
+.image {
+	cursor: pointer;
+}
+
 .image span, .image img {
 	pointer-events: none;
 }
@@ -50,5 +54,6 @@
 @media screen and (min-width: 1366px) {
 	.gallery {
 		padding: 0 20%;
+		margin-bottom: 5%;
 	}
 }

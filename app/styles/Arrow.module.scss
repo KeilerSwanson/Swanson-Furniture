@@ -1,0 +1,50 @@
+.arrow {
+	width: 10rem;
+	height: .2rem;
+	background: black;
+	position: relative;
+}
+
+.arrowLeft {
+	// composes: arrow;
+	width: 10rem;
+	height: .2rem;
+	background: black;
+	position: relative;
+}
+
+.arrowLeft::before, .arrowLeft::after {
+	content: '';
+	position: absolute;
+	width: .5rem;
+	height: .2rem;
+	left: 0;
+	background: black;
+	transform-origin: left;
+}
+
+.arrowLeft::before {
+	transform: rotate(-45deg);
+}
+
+.arrowLeft::after {
+	transform: rotate(45deg);
+}
+
+.arrow::before, .arrow::after {
+	content: '';
+	position: absolute;
+	width: .5rem;
+	height: .2rem;
+	right: 0;
+	background: black;
+	transform-origin: right;
+}
+
+.arrow::before {
+	transform: rotate(45deg);
+}
+
+.arrow::after {
+	transform: rotate(-45deg);
+}

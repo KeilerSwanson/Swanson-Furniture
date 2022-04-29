@@ -23,6 +23,7 @@ export default function Modal({ open, url, closeModal }) {
 					alt=''
 					layout='fill'
 					objectFit='contain'
+					priority
 				/>
 			</div>
 		</div>

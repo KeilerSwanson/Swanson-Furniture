@@ -61,6 +61,7 @@
 	// transform: rotate(45deg);
 	transition: var(--t1);
 	z-index: 3;
+	cursor: pointer;
 }
 
 .bar {
@@ -86,10 +87,9 @@
 
 .image {
 	width: 100%;
-	// flex: 1;
-	// max-height: 66vh;
 	height: 100%;
 	position: relative;
+	// box-shadow: 0 .5rem 2rem -1rem black;
 }
 
 @media screen and (min-width: 768px) {
@@ -109,6 +109,7 @@
 @media screen and (min-width: 1366px) {
 	.closeWrapper {
 		padding: 2.5% 20%;
+		align-items: flex-end;
 	}
 	.image {
 		// max-height: 60%;
