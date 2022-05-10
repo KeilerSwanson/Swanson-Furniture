@@ -18,7 +18,7 @@
 }
 
 .swanson {
-	font-size: 2.5rem;
+	font-size: 2.25rem;
 	font-weight: 400;
 	text-transform: uppercase;
 }
@@ -43,7 +43,7 @@
 }
 
 .menuItem {
-	font-size: 4rem;
+	font-size: 3.5rem;
 	font-weight: 300;
   text-transform: uppercase;
 	cursor: pointer;
@@ -57,15 +57,15 @@
 }
 
 .icon {
-	width: 2.5rem;
-	height: 2.5rem;
+	width: 2.25rem;
+	height: 2.25rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	background: transparent;
 	position: relative;
 	transform: rotate(45deg);
-	gap: .5rem;
+	gap: .4rem;
 	transition: var(--t1);
 	z-index: 3;
 	cursor: pointer;
@@ -125,17 +125,5 @@
 	}
 	.menu {
 		padding: 5% 20%;
-	}
-	.menuItem {
-		// font-size: 4rem;
-	}
-	.swanson {
-		font-size: 1.5rem;
-		font-weight: 500;
-	}
-	.icon {
-		width: 1.5rem;
-		height: 1.5rem;
-		gap: .3rem;
 	}
 }
