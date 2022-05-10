@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import { useState } from 'react'
 import Image from 'next/image'
 import client from '../client'
@@ -37,7 +38,10 @@ export default function GalleryPage({ cabinetry, tables, stairs, beds, doors }) 
 		return (
 			<div className={styles.category}>
 				<h1 className={styles.title}>{category.title}</h1>
-				<div className={styles.images}>
+				<div 
+					className={styles.images}
+					onClick={(e) => openModal(e.target)}	
+				>
 					{
 						category.collections.map(collection => {
 							return (
@@ -67,10 +71,18 @@ export default function GalleryPage({ cabinetry, tables, stairs, beds, doors }) 
 
 	return (
 		<div className={styles.galleryPage}>
+			<Head>
+        <title>Gallery | Swanson Furniture</title>
+        <meta charSet='utf-8' />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name='author' content='Keiler Swanson' />
+        <meta name='description' content="Fine custom furniture and interiors." />
+				<link rel='icon' href='/favicon.ico' />
+      </Head>
 			<NavTop />
 			<div 
 				className={styles.gallery}
-				onClick={(e) => openModal(e.target)}
+				// onClick={(e) => openModal(e.target)}
 			>
 				{categories}
 			</div>

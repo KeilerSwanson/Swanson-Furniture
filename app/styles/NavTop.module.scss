@@ -18,19 +18,13 @@
 }
 
 .swanson {
-	font-family: var(--fancy);
-	font-size: 2.15rem;
-	font-weight: 100;
-}
-
-.custom {
-	font-size: 1.15rem;
-	text-transform: uppercase;
+	font-size: 2.5rem;
 	font-weight: 400;
+	text-transform: uppercase;
 }
 
 .menu {
-	width: 100vw;
+	width: 100%;
 	height: 100vh;
 	padding: 5% 7.5%;
 	background: white;
@@ -49,11 +43,11 @@
 }
 
 .menuItem {
-	font-size: 3.4rem;
-	font-weight: 200;
+	font-size: 4rem;
+	font-weight: 300;
   text-transform: uppercase;
-  color: black;
 	cursor: pointer;
+	transition: var(--t1);
 }
 
 .menuOpen {
@@ -80,8 +74,7 @@
 .bar {
 	background: black;
 	transition: var(--t1);
-	width: .2rem;
-	// border-radius: 50px;
+	width: 2px;
 }
 
 .bar1 {
@@ -111,14 +104,13 @@
 	// translateX(.2rem);
 }
 
-.iconCross > .bar1 {
+.iconCross > .bar1, .iconCross > .bar4 {
 	opacity: 0;
-	position: absolute;
 }
 
 .iconCross > .bar2 {
-	transform: rotate(45deg);
 	position: absolute;
+	transform: rotate(45deg);
 }
 
 .iconCross > .bar3 {
@@ -126,30 +118,24 @@
 	transform: rotate(-45deg);
 }
 
-.iconCross > .bar4 {
-	opacity: 0;
-	position: absolute;
-}
-
 @media screen and (min-width: 1366px) {
 	.nav {
 		padding: 2.5% 20%;
 		margin-bottom: 2.5%;
-		align-items: flex-end;
 	}
 	.menu {
-		padding: 0;
-		width: unset;
-		height: unset;
-		position: unset;
-		opacity: 1;
-		visibility: visible;
-		flex-direction: row;
+		padding: 5% 20%;
 	}
 	.menuItem {
+		// font-size: 4rem;
+	}
+	.swanson {
 		font-size: 1.5rem;
+		font-weight: 500;
 	}
 	.icon {
-		display: none;
+		width: 1.5rem;
+		height: 1.5rem;
+		gap: .3rem;
 	}
 }

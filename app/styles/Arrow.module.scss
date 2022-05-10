@@ -3,6 +3,7 @@
 	height: .2rem;
 	background: black;
 	position: relative;
+	cursor: pointer;
 }
 
 .arrowLeft {
@@ -11,6 +12,7 @@
 	height: .2rem;
 	background: black;
 	position: relative;
+	cursor: pointer;
 }
 
 .arrowLeft::before, .arrowLeft::after {

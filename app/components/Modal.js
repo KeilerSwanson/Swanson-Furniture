@@ -3,16 +3,20 @@ import styles from '../styles/Modal.module.scss'
 
 export default function Modal({ open, url, closeModal }) {
 	const modalClass = open ? styles.modalOpen : styles.modal
-	console.log('url in modal: ', url)
 
 	return (
-		<div className={modalClass}>
+		<div 
+			className={modalClass}
+			onClick={closeModal}	
+		>
 			<div className={styles.closeWrapper}>
 				<div className={styles.logo}>
 					<h1 className={styles.swanson}>Swanson Furniture</h1>
-					<h2 className={styles.custom}>Custom Furniture & Interiors</h2>
+					{/* <h2 className={styles.custom}>Custom Furniture & Interiors</h2> */}
 				</div>
-				<button className={styles.close} onClick={closeModal}>
+				<button className={styles.close} 
+					// onClick={closeModal}
+				>
 					<div className={styles.bar1} />
 					<div className={styles.bar2} />
 				</button>

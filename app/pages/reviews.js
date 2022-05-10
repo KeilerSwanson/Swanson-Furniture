@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import { useState } from 'react'
 import NavTop from '../components/NavTop'
 import Arrow from '../components/Arrow'
@@ -10,7 +11,7 @@ export default function Reviews() {
 			author: 'Chad B.'
 		},
 		{
-			quote: `Can't say enough about Swanson Services! Incredibly talented and professional. Built custom iron stair railing, refaced kitchen cabinets and more. Great design ideas and incredible craftsmanship. Showed up on time and finished work in a timely manner. Great company! Highly recommend.`,
+			quote: `Can't say enough about Swanson Furniture! Incredibly talented and professional. Built custom iron stair railing, refaced kitchen cabinets and more. Great design ideas and incredible craftsmanship. Showed up on time and finished work in a timely manner. Great company! Highly recommend.`,
 			author: 'Deborah M.'
 		},
 		{
@@ -45,6 +46,14 @@ export default function Reviews() {
 
 	return (
 		<div className={styles.reviewsPage}>
+			<Head>
+        <title>Reviews | Swanson Furniture</title>
+        <meta charSet='utf-8' />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name='author' content='Keiler Swanson' />
+        <meta name='description' content="Fine custom furniture and interiors." />
+				<link rel='icon' href='/favicon.ico' />
+      </Head>
 			<NavTop />
 			<blockquote className={styles.review}>
 				<p className={styles.quoteMark}>"</p>
