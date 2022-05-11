@@ -5,17 +5,8 @@ import effects from '../styles/Effects.module.scss'
 
 export default function NavTop() {
 	const [menuOpen, setMenuOpen] = useState(false)
-	const [logoText, setLogoText] = useState('SF')
 	const menuClass = menuOpen ? styles.menuOpen : styles.menu
 	const iconClass = menuOpen ? styles.iconCross : styles.icon
-
-
-	useEffect(() => {
-		console.log('nav effect hook')
-		if (window.innerWidth >= 1366) {
-			setLogoText('Swanson Furniture')
-		}
-	}, [])
 
 	// const toggleMenu = () => setMenuOpen(!menuOpen)
 	function toggleMenu() {
@@ -25,8 +16,7 @@ export default function NavTop() {
 	return (
 		<nav className={styles.nav}>
 			<div className={styles.logo}>
-				<h1 className={styles.swanson}>{logoText}</h1>
-				{/* <h2 className={styles.custom}>Custom Furniture & Interiors</h2> */}
+				<h1 className={styles.swanson}>Swanson Furniture<sup>TM</sup></h1>
 			</div>
 			<menu className={menuClass}>
 				<Link href='/gallery'>
@@ -43,10 +33,8 @@ export default function NavTop() {
 				</Link>
 			</menu>
 			<button className={iconClass} onClick={toggleMenu}>
-				<div className={styles.bar1} />
 				<div className={styles.bar2} />
 				<div className={styles.bar3} />
-				<div className={styles.bar4} />
 			</button>
 		</nav>
 	)

@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import ansleyKitchen from '../public/ansley-kitchen-1.jpg'
 import styles from '../styles/Modal.module.scss'
 
 export default function Modal({ open, url, closeModal }) {
@@ -9,21 +10,16 @@ export default function Modal({ open, url, closeModal }) {
 			className={modalClass}
 			onClick={closeModal}	
 		>
-			<div className={styles.closeWrapper}>
-				<div className={styles.logo}>
-					<h1 className={styles.swanson}>Swanson Furniture</h1>
-					{/* <h2 className={styles.custom}>Custom Furniture & Interiors</h2> */}
-				</div>
-				<button className={styles.close} 
-					// onClick={closeModal}
-				>
+			<nav className={styles.nav}>
+				<h1 className={styles.dummyLogo}>Swanson Furniture</h1>
+				<button className={styles.close}>
 					<div className={styles.bar1} />
 					<div className={styles.bar2} />
 				</button>
-			</div>	
+			</nav>	
 			<div className={styles.image}>
 				<Image
-					src={url ? url : '/public/ansley-kitchen-1.jpg'}
+					src={url ? url : ansleyKitchen}
 					alt=''
 					layout='fill'
 					objectFit='contain'

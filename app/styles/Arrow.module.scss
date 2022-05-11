@@ -1,15 +1,21 @@
+.arrowWrapper {
+	padding: 10% 0;
+}
+
 .arrow {
-	width: 10rem;
+	width: 7.5rem;
 	height: .2rem;
 	background: black;
 	position: relative;
 	cursor: pointer;
+	// padding: 5% 0;
 }
 
 .arrowLeft {
 	// composes: arrow;
-	width: 10rem;
-	height: .2rem;
+	// padding: 5% 0;
+	width: 7.5rem;
+	height: 2px;
 	background: black;
 	position: relative;
 	cursor: pointer;
@@ -19,7 +25,7 @@
 	content: '';
 	position: absolute;
 	width: .5rem;
-	height: .2rem;
+	height: 2px;
 	left: 0;
 	background: black;
 	transform-origin: left;
@@ -37,7 +43,7 @@
 	content: '';
 	position: absolute;
 	width: .5rem;
-	height: .2rem;
+	height: 2px;
 	right: 0;
 	background: black;
 	transform-origin: right;

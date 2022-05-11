@@ -5,8 +5,10 @@ export default function Arrow({ left = false, handler }) {
 
 	return (
 		<div 
-			className={arrowClass} 
+			className={styles.arrowWrapper}
 			onClick={handler}	
-		/>
+		>
+			<div className={arrowClass} />
+		</div>
 	)
 }

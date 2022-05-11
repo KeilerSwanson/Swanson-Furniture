@@ -3,11 +3,10 @@ import { useState } from 'react'
 import Image from 'next/image'
 import client from '../client'
 import imageUrlBuilder from '@sanity/image-url'
-// import { formatCatTitle } from '../lib/utils'
 import NavTop from '../components/NavTop'
-import Gallery from '../components/Gallery'
+// import Gallery from '../components/Gallery'
 import Modal from '../components/Modal'
-import styles from '../styles/GalleryPage.module.scss'
+import styles from '../styles/Gallery.module.scss'
 
 const builder = imageUrlBuilder(client)
 function urlFor(source) {
@@ -112,7 +111,6 @@ export async function getStaticProps() {
 		`*[_type == 'collection' && category == 'doors']{ images }`
 	)
 	
-
   return {
     props: {
 			cabinetry: {

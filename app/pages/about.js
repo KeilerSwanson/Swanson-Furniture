@@ -38,9 +38,9 @@ export default function AboutPage() {
 						priority
 					/>
 				</div>
-				<p className={styles.copy}>
-					
-				</p>
+				{/* <p className={styles.copy}>
+					Scott Swanson has been designing and building custom furniture and interiors blah blah blah.
+				</p> */}
 			</div>
 		</div>
 	)

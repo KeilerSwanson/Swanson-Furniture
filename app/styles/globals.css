@@ -1,15 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&Inter:wght@200;300;400;500&display=swap');
-/* @font-face {
-	font-family: 'Bangla MN';
-	src: url('./bangla-mn.ttf');
-} */
-
 
 :root {
 	box-sizing: border-box;
 	font-family: 'Montserrat', sans-serif;
   font-size: 10px;
-	/* --fancy: 'Montserrat', serif; */
 	--t1: .15s ease-in-out;
 }
 
@@ -31,7 +25,7 @@ ol, ul {
   list-style: none;
 }
 
-button, a, input {
+button, a, input, textarea {
   border: none;
   text-decoration: none;
   outline: none;

@@ -18,9 +18,15 @@
 }
 
 .swanson {
-	font-size: 2.25rem;
-	font-weight: 400;
+	// font-size: 2.25rem;
+	font-size: 1.6rem;
+	font-weight: 500;
 	text-transform: uppercase;
+}
+
+.swanson > sup {
+	font-size: .8rem;
+	font-weight: 600;
 }
 
 .menu {
@@ -57,64 +63,53 @@
 }
 
 .icon {
-	width: 2.25rem;
-	height: 2.25rem;
-	display: flex;
+	width: 3.5rem;
+	height: 100%;
 	justify-content: center;
-	align-items: center;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
 	background: transparent;
 	position: relative;
-	transform: rotate(45deg);
 	gap: .4rem;
 	transition: var(--t1);
 	z-index: 3;
 	cursor: pointer;
+	transform-origin: center;
 }
 
 .bar {
 	background: black;
 	transition: var(--t1);
-	width: 2px;
-}
-
-.bar1 {
-	composes: bar;
-	height: 50%;
+	height: 2px;
 }
 
 .bar2 {
 	composes: bar;
-	height: 100%;
-	opacity: 1;
+	width: 100%;
 }
 
 .bar3 {
 	composes: bar;
-	height: 100%;
-}
-
-.bar4 {
-	composes: bar;
-	height: 50%;
+	width: 60%;
 }
 
 .iconCross {
 	composes: icon;
-	transform: rotate(270deg) 
+	top: .3rem;
 }
 
-.iconCross > .bar1, .iconCross > .bar4 {
-	opacity: 0;
+.iconCross > .bar {
+	position: absolute;
+	width: 80%;
 }
 
 .iconCross > .bar2 {
-	position: absolute;
-	transform: rotate(45deg);
+	transform: rotate(-135deg);
 }
 
 .iconCross > .bar3 {
-	position: absolute;
-	transform: rotate(-45deg);
+	transform: rotate(135deg);
 }
 
 @media screen and (min-width: 1366px) {

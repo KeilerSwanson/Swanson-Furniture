@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import { useRef, useState } from 'react'
 import NavTop from '../components/NavTop'
-import styles from '../styles/ContactPage.module.scss'
+import Arrow from '../components/Arrow'
+import styles from '../styles/Contact.module.scss'
 
 export default function Contact() {
 	const refs = {
@@ -17,7 +18,7 @@ export default function Contact() {
 	}
 
 	return (
-		<div className={styles.contactPage}>
+		<div className={styles.contact}>
 			<Head>
         <title>Contact | Swanson Furniture</title>
         <meta charSet='utf-8' />
@@ -27,8 +28,8 @@ export default function Contact() {
 				<link rel='icon' href='/favicon.ico' />
       </Head>
 			<NavTop />
-			<div className={styles.contactWrapper}>
-				{/* <a className={styles.tel} href='tel:678-522-7026'>678-522-7026</a> */}
+			<div className={styles.formWrapper}>
+				<a className={styles.tel} href='tel:+1678-522-7026'>+1-678-522-7026</a>
 				<form 
 					ref={refs.form}
 					className={styles.form}
@@ -48,6 +49,8 @@ export default function Contact() {
 						type='text' 
 						placeholder='Name' 
 						className={styles.name}
+						required={true}
+						maxLength={50}
 					/>
 					<label className={styles.label} htmlFor='email'>Email</label>
 					<input 
@@ -56,6 +59,7 @@ export default function Contact() {
 						type='email' 
 						placeholder='Email' 
 						className={styles.email}
+						required={true}
 					/>
 					<label className={styles.label} htmlFor='phone'>Phone</label>
 					<input
@@ -64,6 +68,7 @@ export default function Contact() {
 						type='tel'
 						placeholder='Phone'
 						className={styles.phone}
+						required={true}
 					/>
 					<label className={styles.label} htmlFor='message'>Message</label>
 					<textarea 
@@ -71,6 +76,8 @@ export default function Contact() {
 						name='message' 
 						placeholder='Message' 
 						className={styles.message}
+						required={true}
+						maxLength={500}
 					/>
 					<button className={styles.submit} onClick={submitForm}>Send</button>
 					{/* <div className={responseClass}>
