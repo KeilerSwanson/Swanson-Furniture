@@ -28,7 +28,7 @@ export default function Contact() {
       </Head>
 			<NavTop />
 			<div className={styles.contactWrapper}>
-				<a className={styles.tel} href='tel:678-522-7026'>678-522-7026</a>
+				{/* <a className={styles.tel} href='tel:678-522-7026'>678-522-7026</a> */}
 				<form 
 					ref={refs.form}
 					className={styles.form}

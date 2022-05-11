@@ -1,13 +1,15 @@
 import Head from 'next/head'
 import NavTop from '../components/NavTop'
-import HomeMosaic from '../components/HomeMosaic'
-// import GalleryLink from '../components/GalleryLink'
-import styles from '../styles/HomePage.module.scss'
+import Image from 'next/image'
+import ansleyLiving from '../public/ansley-living-2.jpg'
+import ansleyKitchen5 from '../public/ansley-kitchen-5.jpg'
+import ansleyKitchen1 from '../public/ansley-kitchen-1.jpg'
+import styles from '../styles/Home.module.scss'
 
 export default function Home() {
 
 	return (
-		<div className={styles.homePage}>
+		<div className={styles.home}>
 			<Head>
         <title>Swanson Furniture</title>
         <meta charSet='utf-8' />
@@ -17,8 +19,35 @@ export default function Home() {
 				<link rel='icon' href='/favicon.ico' />
       </Head>
 			<NavTop />
-			<HomeMosaic />
-			{/* <GalleryLink /> */}
+			<div className={styles.mosaic}>
+				<div className={styles.image}>
+					<Image 
+						src={ansleyLiving} 
+						alt=''
+						layout='fill'
+						objectFit='cover'
+						priority	
+					/>
+				</div>
+				<div className={styles.image}>
+					<Image 
+						src={ansleyKitchen5} 
+						alt=''
+						layout='fill'
+						objectFit='cover'
+						priority	
+					/>
+				</div>
+				<div className={styles.image}>
+					<Image 
+						src={ansleyKitchen1} 
+						alt=''
+						layout='fill'
+						objectFit='cover'
+						priority	
+					/>
+				</div>
+			</div>
 		</div>
 	)
 }

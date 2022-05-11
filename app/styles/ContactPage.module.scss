@@ -8,9 +8,9 @@
 .contactWrapper {
 	display: flex;
 	flex-direction: column;
-	padding: 0 7.5% 10%;
+	padding: 5% 7.5%;
 	flex: 1;
-	justify-content: space-around;
+	justify-content: center;
 	align-items: center;
 }
 
@@ -18,6 +18,7 @@
 	// width: 100%;
 	font-size: 1.8rem;
 	font-weight: 400;
+	margin-bottom: 20%;
 }
 
 .form {
@@ -53,7 +54,7 @@
 .message {
 	composes: input;
 	font-family: 'Inter', sans-serif;
-	min-height: 20rem;
+	min-height: 15rem;
 }
 
 .submit {
@@ -65,12 +66,15 @@
 
 @media screen and (min-width: 768px) {
 	.contactWrapper {
-		padding: 0 15%;
+		padding: 0 20%;
 	}
 }
 
 @media screen and (min-width: 1366px) {
+	.tel {
+		margin-bottom: 10%;
+	}
 	.contactWrapper {
-		padding: 0 20%;
+		padding: 2.5% 35%;
 	}
 }
