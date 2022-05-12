@@ -15,9 +15,9 @@ export default function NavTop() {
 
 	return (
 		<nav className={styles.nav}>
-			<div className={styles.logo}>
-				<h1 className={styles.swanson}>Swanson Furniture<sup>TM</sup></h1>
-			</div>
+			<Link href='/'>
+				<a className={styles.logo}>Swanson Furniture <sup>TM</sup></a>
+			</Link>
 			<menu className={menuClass}>
 				<Link href='/gallery'>
 					<a className={`${styles.menuItem} ${effects.menuItem}`}>Gallery</a>

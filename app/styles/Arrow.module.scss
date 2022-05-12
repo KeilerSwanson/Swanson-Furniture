@@ -1,5 +1,6 @@
 .arrowWrapper {
 	padding: 10% 0;
+	cursor: pointer;
 }
 
 .arrow {
@@ -7,7 +8,7 @@
 	height: .2rem;
 	background: black;
 	position: relative;
-	cursor: pointer;
+	// cursor: pointer;
 	// padding: 5% 0;
 }
 
@@ -55,4 +56,16 @@
 
 .arrow::after {
 	transform: rotate(-45deg);
+}
+
+@media screen and (min-width: 768px) {
+	.arrowWrapper {
+		padding: 5% 0;
+	}
+}
+
+@media screen and (min-width: 1366px) {
+	.arrowWrapper {
+		// padding: 2.5% 0;
+	}
 }
