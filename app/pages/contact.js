@@ -1,10 +1,13 @@
 import Head from 'next/head'
 import { useRef, useState } from 'react'
 import NavTop from '../components/NavTop'
-import Arrow from '../components/Arrow'
 import styles from '../styles/Contact.module.scss'
 
 export default function Contact() {
+	const [loading, setLoading] = useState(false)
+	const [response, setResponse] = useState(null)
+	const submitClass = loading ? styles.submitLoading : styles.submit
+	const responseClass = response ? styles.responseShow : styles.response
 	const refs = {
 		form: useRef(),
 		name: useRef(),
@@ -13,8 +16,32 @@ export default function Contact() {
 		message: useRef()
 	}
 
-	function submitForm() {
+	function validForm(...inputs) {
+		for (let i = 0; i < inputs.length; i++) {
+			if (inputs[i].value.length === 0) return false
+		}
+		return true
+	}
 
+	async function submitForm(e) {
+		e.preventDefault()
+		if (!validForm(refs.name.current, refs.email.current, refs.phone.current, refs.message.current)) return
+
+		setLoading(true)
+		try {
+			const formData = new FormData(refs.form.current)
+			const resp = await fetch('/', {
+				method: 'POST',
+				headers: { "Content-Type": "application/x-www-form-urlencoded" },
+				body: new URLSearchParams(formData).toString()
+			})
+			console.log('resp: ', resp)
+			setResponse(resp.status)
+		} catch (err) {
+			alert(`Sorry, there was an error: '${err}'. Please refresh the page and try again.`)
+		}
+		setLoading(false)
+		refs.form.current.reset()
 	}
 
 	return (
@@ -79,10 +106,16 @@ export default function Contact() {
 						required={true}
 						maxLength={500}
 					/>
-					<button className={styles.submit} onClick={submitForm}>Send</button>
-					{/* <div className={responseClass}>
-						{(response === 200) ? "Message sent successfully!" : "Sorry, it looks like there was an error. Please refresh the page and try again."}
-					</div> */}
+					<button 
+						// type='submit'
+						className={submitClass} 
+						onClick={submitForm}
+					>
+						{loading ? 'Sending...' : 'Send'}
+					</button>
+					<div className={responseClass}>
+						{(response === 200) ? "Message sent successfully!" : "Sorry, there was an error."}
+					</div>
 				</form>
 			</div>
 		</div>

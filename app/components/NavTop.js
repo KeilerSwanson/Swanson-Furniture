@@ -16,7 +16,7 @@ export default function NavTop() {
 	return (
 		<nav className={styles.nav}>
 			<Link href='/'>
-				<a className={styles.logo}>Swanson Furniture <sup>TM</sup></a>
+				<a className={styles.logo}>Swanson Furniture</a>
 			</Link>
 			<menu className={menuClass}>
 				<Link href='/gallery'>
