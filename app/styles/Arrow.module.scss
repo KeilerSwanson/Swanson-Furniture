@@ -1,71 +1,56 @@
-.arrowWrapper {
-	padding: 10% 0;
-	cursor: pointer;
-}
-
 .arrow {
-	width: 7.5rem;
-	height: .2rem;
-	background: black;
+	padding: 10% 0;
 	position: relative;
-	// cursor: pointer;
-	// padding: 5% 0;
+	transition: var(--t1);
+	cursor: pointer;
 }
 
 .arrowLeft {
-	// composes: arrow;
-	// padding: 5% 0;
+	composes: arrow;
+	transform: rotate(180deg);
+}
+
+.arrowInner {
 	width: 7.5rem;
 	height: 2px;
 	background: black;
 	position: relative;
-	cursor: pointer;
+	transition: var(--t1);
 }
 
-.arrowLeft::before, .arrowLeft::after {
+.arrowInner::before, .arrowInner::after {
 	content: '';
 	position: absolute;
-	width: .5rem;
-	height: 2px;
-	left: 0;
-	background: black;
-	transform-origin: left;
-}
-
-.arrowLeft::before {
-	transform: rotate(-45deg);
-}
-
-.arrowLeft::after {
-	transform: rotate(45deg);
-}
-
-.arrow::before, .arrow::after {
-	content: '';
-	position: absolute;
-	width: .5rem;
+	width: 5px;
 	height: 2px;
 	right: 0;
 	background: black;
 	transform-origin: right;
+	transition: var(--t1);
 }
 
-.arrow::before {
+.arrowInner::before {
 	transform: rotate(45deg);
 }
 
-.arrow::after {
+.arrowInner::after {
 	transform: rotate(-45deg);
 }
 
 @media screen and (min-width: 768px) {
-	.arrowWrapper {
+	.arrow {
 		padding: 5% 0;
 	}
 }
 
 @media screen and (min-width: 1366px) {
-	.arrowWrapper {
-		// padding: 2.5% 0;
+	.arrow:hover {
+		// transform: translateX(.5rem);
 	}
+	.arrow:hover > .arrowInner, .arrow:hover > .arrowInner::before, .arrow:hover > .arrowInner::after {
+		background: #999;
+	}
+	// .arrowLeft:hover {
+	// 	transform: rotate(180deg) translateX(.5rem);
+	// }
 }

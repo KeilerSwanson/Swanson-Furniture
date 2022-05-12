@@ -15,18 +15,17 @@
 .formWrapper {
 	display: flex;
 	flex-direction: column;
-	padding: 5% 7.5%;
-	// flex: 1;
+	padding: 5% 7.5% 0;
 	justify-content: center;
 	align-items: center;
 	position: relative;
 }
 
 .tel {
-	// width: 100%;
 	font-size: 2.25rem;
 	font-weight: 400;
 	margin-bottom: 15%;
+	transition: var(--t1);
 }
 
 .form {
@@ -34,8 +33,6 @@
 	flex-direction: column;
 	gap: 1rem;
 	width: 100%;
-	// padding: 0 7.5%;
-	// margin: 2.5rem 0;
 }
 
 .label {
@@ -45,21 +42,22 @@
 }
 
 .input, .message {
-	font-size: 1.5rem;
+	font-size: 1.6rem;
 	font-weight: 400;
 	width: 100%;
-	border: solid 2px #999;
+	border: solid 2px rgba(153, 153, 153, 0.539);
 	padding: 1rem;
 	color: black;
 	background: white;
 	border-radius: .5rem;
+	transition: var(--t1);
 }
 
 .input:valid, .message:valid {
-	border: solid 2px #333;
+	border: solid 2px #666;
 }
 
-.input::placeholder {
+.input::placeholder, .message::placeholder {
 	color: #999;
 }
 
@@ -71,15 +69,19 @@
 	composes: input;
 	font-family: 'Montserrat', sans-serif;
 	min-height: 12.5rem;
+
 }
 
 .submit {
-	font-size: 1.5rem;
+	font-size: 1.6rem;
+	font-weight: 400;
 	background: #333;
 	color: white;
 	padding: 1rem;
 	border: solid 2px #333;
 	border-radius: .5rem;
+	cursor: pointer;
+	transition: var(--t1);
 }
 
 .submitLoading {
@@ -87,12 +89,11 @@
 }
 
 .response {
-	font-size: 1.5rem;
+	font-size: 1.6rem;
 	font-weight: 400;
 	text-align: center;
 	visibility: hidden;
 	opacity: 0;
-	// margin-top: 1rem;
 	transform: translateY(1rem);
 	transition: var(--t1);
 }
@@ -105,15 +106,19 @@
 
 @media screen and (min-width: 768px) {
 	.formWrapper {
-		padding: 0 20%;
+		padding: 0 20% 0;
 	}
 }
 
 @media screen and (min-width: 1366px) {
-	.tel {
-		// margin-bottom: 10%;
+	.tel:hover {
+		color: #999;
 	}
 	.formWrapper {
-		padding: 2.5% 35%;
+		padding: 2.5% 35% 0;
+	}
+	.submit:hover {
+		background: #666;
+		border: solid 2px #666;
 	}
 }

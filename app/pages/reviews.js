@@ -44,20 +44,6 @@ export default function Reviews() {
 		setCurrIdx(prevIdx)
 	}
 
-	// function nextReview() {
-	// 	const rotated = [...reviews]
-	// 	const curr = rotated.shift()
-	// 	rotated.push(curr)
-	// 	setReviews(rotated)
-	// }
-
-	// function prevReview() {
-	// 	const rotated = [...reviews]
-	// 	const curr = rotated.pop()
-	// 	rotated.unshift(curr)
-	// 	setReviews(rotated)
-	// }
-
 	return (
 		<div className={styles.reviews}>
 			<Head>
@@ -69,14 +55,13 @@ export default function Reviews() {
 				<link rel='icon' href='/favicon.ico' />
       </Head>
 			<NavTop />
-			<blockquote className={styles.review}>
-				{/* <p className={styles.quoteMark}>"</p> */}
+			<blockquote className={styles.reviewCurrent}>
 				<p className={styles.quote}>{reviews[currIdx].quote}</p>
 				<p className={styles.author}>{`- ${reviews[currIdx].author}`}</p>
 			</blockquote>
 			<div className={styles.controls}>
 				<Arrow left={true} handler={prevReview} />
-				<div className={styles.dots}>
+			<div className={styles.dots}>
 				{dots}
 			</div>
 				<Arrow handler={nextReview} />

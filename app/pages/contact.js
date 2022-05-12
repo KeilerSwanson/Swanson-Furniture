@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { useRef, useState } from 'react'
 import NavTop from '../components/NavTop'
 import styles from '../styles/Contact.module.scss'
+// import effects from '../styles/Effects.module.scss'
 
 export default function Contact() {
 	const [loading, setLoading] = useState(false)
@@ -108,7 +109,7 @@ export default function Contact() {
 					/>
 					<button 
 						// type='submit'
-						className={submitClass} 
+						className={submitClass}
 						onClick={submitForm}
 					>
 						{loading ? 'Sending...' : 'Send'}
