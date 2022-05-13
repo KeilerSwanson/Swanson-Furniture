@@ -1,3 +1,5 @@
+@use 'typography';
+
 .contact {
 	display: flex;
 	flex-direction: column;
@@ -42,8 +44,9 @@
 }
 
 .input, .message {
-	font-size: 1.6rem;
-	font-weight: 400;
+	// font-size: 1.6rem;
+	// font-weight: 400;
+	@include typography.copy;
 	width: 100%;
 	border: solid 2px rgba(153, 153, 153, 0.539);
 	padding: 1rem;
@@ -73,8 +76,9 @@
 }
 
 .submit {
-	font-size: 1.6rem;
-	font-weight: 400;
+	// font-size: 1.6rem;
+	// font-weight: 400;
+	@include typography.copy;
 	background: #333;
 	color: white;
 	padding: 1rem;
@@ -89,8 +93,9 @@
 }
 
 .response {
-	font-size: 1.6rem;
-	font-weight: 400;
+	// font-size: 1.6rem;
+	// font-weight: 400;
+	@include typography.copy;
 	text-align: center;
 	visibility: hidden;
 	opacity: 0;

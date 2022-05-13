@@ -38,9 +38,9 @@ export default function AboutPage() {
 						priority
 					/>
 				</div>
-				{/* <p className={styles.copy}>
-					Scott Swanson has been designing and building custom furniture and interiors blah blah blah.
-				</p> */}
+				<p className={styles.copy}>
+					Scott Swanson is a self-taught designer and carpenter based out of Atlanta, GA. For more than 30 years, he’s been building fine furniture and living spaces for a wide variety of clients. His passion for the craft and love for collaboration keep him as inspired today as when he started. 
+				</p>
 			</div>
 		</div>
 	)
