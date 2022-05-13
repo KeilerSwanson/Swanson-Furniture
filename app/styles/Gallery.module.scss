@@ -44,10 +44,15 @@
 .image {
 	cursor: pointer;
 	transition: var(--t1);
+	box-shadow: var(--sdSml);
 }
 
 .image span, .image img {
 	pointer-events: none;
+}
+
+.image > span {
+	height: 100% !important;
 }
 
 .image img {

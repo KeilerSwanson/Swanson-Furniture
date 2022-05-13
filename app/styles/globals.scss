@@ -5,6 +5,13 @@
 	font-family: 'Montserrat', sans-serif;
   font-size: 10px;
 	--t1: .15s ease-in-out;
+  --sl: -0.5rem 0.5rem 1.25rem -0.5rem #3333339f;
+  --sr: 0.5rem 0.5rem 1.25rem -0.5rem #3333339f;
+  --sd: 0 0.5rem 1.25rem -0.5rem #3333339f;
+  --sdSml: 0 .5rem 1.25rem -0.75rem #3333339f;
+  --d1: #999;
+  --d2: #666;
+  --d3: #333;
 }
 
 *, *:before, *:after {

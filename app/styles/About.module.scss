@@ -19,16 +19,19 @@
 
 .image {
 	position: relative;
+	border-radius: .5rem;
 }
 
 .image:nth-child(1) {
 	grid-column: 1/18;
   grid-row: 1/8;
+	box-shadow: var(--sd);
 }
 
 .image:nth-child(2) {
 	grid-row: 6/17;
   grid-column: 12/21;
+	box-shadow: var(--sl);
 }
 
 .image:nth-child(1) img {
