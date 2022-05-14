@@ -4,7 +4,8 @@
 	box-sizing: border-box;
 	font-family: 'Montserrat', sans-serif;
   font-size: 10px;
-	--t1: .15s ease-in-out;
+	--t1: .15s;
+  --t2: .3s;
   --sl: -0.5rem 0.5rem 1.25rem -0.5rem #3333339f;
   --sr: 0.5rem 0.5rem 1.25rem -0.5rem #3333339f;
   --sd: 0 0.5rem 1.25rem -0.5rem #3333339f;

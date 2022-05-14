@@ -44,12 +44,10 @@
 }
 
 .input, .message {
-	// font-size: 1.6rem;
-	// font-weight: 400;
 	@include typography.copy;
 	width: 100%;
 	border: solid 2px rgba(153, 153, 153, 0.539);
-	padding: 1rem;
+	padding: .5rem;
 	color: black;
 	background: white;
 	border-radius: .5rem;
@@ -62,6 +60,7 @@
 
 .input::placeholder, .message::placeholder {
 	color: #999;
+	@include typography.copy;
 }
 
 .name, .email, .phone {
@@ -76,12 +75,10 @@
 }
 
 .submit {
-	// font-size: 1.6rem;
-	// font-weight: 400;
 	@include typography.copy;
 	background: #333;
 	color: white;
-	padding: 1rem;
+	padding: .5rem;
 	border: solid 2px #333;
 	border-radius: .5rem;
 	cursor: pointer;

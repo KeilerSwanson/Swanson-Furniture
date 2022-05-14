@@ -1,6 +1,7 @@
 import Head from 'next/head'
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import NavTop from '../components/NavTop'
+// import Fade from '../lib/Fade'
 import Arrow from '../components/Arrow'
 import styles from '../styles/Reviews.module.scss'
 
@@ -29,19 +30,37 @@ const reviews = [
 
 export default function Reviews() {
 	const [currIdx, setCurrIdx] = useState(0)
+	const mounting = useRef(false)
+	const reviewRef = useRef()
 
 	const dots = reviews.map((review, idx) => {
 		return (idx === currIdx) ? <div className={styles.dotCurrent} key={idx} /> : <div className={styles.dot} key={idx} />
 	})
+
+	useEffect(() => {
+		mounting.current = true
+	}, [])
+
+	useEffect(() => {
+		if (mounting.current) {
+			reviewRef.current.style.cssText = 'opacity: 1;'
+		}
+	})
 	
 	function nextReview() {
-		const nextIdx = currIdx < 4 ? currIdx + 1 : 0
-		setCurrIdx(nextIdx)
+		reviewRef.current.style.cssText = 'opacity: 0;'
+		setTimeout(() => {
+			const nextIdx = currIdx < 4 ? currIdx + 1 : 0
+			setCurrIdx(nextIdx)
+		}, 300)
 	}
 
 	function prevReview() {
-		const prevIdx = currIdx > 0 ? currIdx - 1 : 4
-		setCurrIdx(prevIdx)
+		reviewRef.current.style.cssText = 'opacity: 0;'
+		setTimeout(() => {
+			const prevIdx = currIdx > 0 ? currIdx - 1 : 4
+			setCurrIdx(prevIdx)
+		}, 300)
 	}
 
 	return (
@@ -55,7 +74,7 @@ export default function Reviews() {
 				<link rel='icon' href='/favicon.ico' />
       </Head>
 			<NavTop />
-			<blockquote className={styles.reviewCurrent}>
+			<blockquote ref={reviewRef} className={styles.review}>
 				<p className={styles.quote}>{reviews[currIdx].quote}</p>
 				<p className={styles.author}>{`- ${reviews[currIdx].author}`}</p>
 			</blockquote>

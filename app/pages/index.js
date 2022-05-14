@@ -5,6 +5,7 @@ import Image from 'next/image'
 import ansleyLiving from '../public/ansley-living-2.jpg'
 import ansleyKitchen5 from '../public/ansley-kitchen-5.jpg'
 import ansleyKitchen1 from '../public/ansley-kitchen-1.jpg'
+import blur from '../public/blur.png'
 import styles from '../styles/Home.module.scss'
 // import effects from '../styles/Effects.module.scss'
 
@@ -29,6 +30,8 @@ export default function Home() {
 						layout='fill'
 						objectFit='cover'
 						priority	
+						placeholder='blur'
+						blurDataURL={blur}
 					/>
 				</div>
 				<div className={styles.image}>
@@ -38,6 +41,8 @@ export default function Home() {
 						layout='fill'
 						objectFit='cover'
 						priority	
+						placeholder='blur'
+						blurDataURL={blur}
 					/>
 				</div>
 				<div className={styles.image}>
@@ -47,6 +52,8 @@ export default function Home() {
 						layout='fill'
 						objectFit='cover'
 						priority	
+						placeholder='blur'
+						blurDataURL={blur}
 					/>
 				</div>
 			</div>

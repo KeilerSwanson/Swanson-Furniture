@@ -3,6 +3,7 @@ import NavTop from '../components/NavTop'
 import Image from 'next/image'
 import dadSmile from '../public/dad-smile.jpeg'
 import dadWork from '../public/dad-working.jpeg'
+import blur from '../public/blur.png'
 // import AboutMosaic from '../components/AboutMosaic'
 import styles from '../styles/About.module.scss'
 
@@ -27,6 +28,8 @@ export default function AboutPage() {
 						layout='fill'
 						objectFit='cover'
 						priority
+						placeholder='blur'
+						blurDataURL={blur}
 					/>
 				</div>
 				<div className={styles.image}>
@@ -36,6 +39,8 @@ export default function AboutPage() {
 						layout='fill'
 						objectFit='cover'
 						priority
+						placeholder='blur'
+						blurDataURL={blur}
 					/>
 				</div>
 				<p className={styles.copy}>

@@ -3,8 +3,8 @@ import { useState } from 'react'
 import Image from 'next/image'
 import client from '../client'
 import imageUrlBuilder from '@sanity/image-url'
+import blur from '../public/blur.png'
 import NavTop from '../components/NavTop'
-// import Gallery from '../components/Gallery'
 import Modal from '../components/Modal'
 import styles from '../styles/Gallery.module.scss'
 
@@ -20,22 +20,27 @@ export default function GalleryPage({ cabinetry, tables, stairs, beds, doors }) 
 	})
 
 	function openModal(target) {
-		setModal({
-			open: true,
-			url: target.dataset.url
-		})
+		if (target.dataset.url) {
+			setModal({
+				open: true,
+				url: target.dataset.url
+			})
+		}
 	}
 
 	function closeModal() {
 		setModal({
 			open: false,
-			url: modal.url
+			url: ''
 		})
 	}
 
-	const categories = [cabinetry, tables, stairs, beds, doors].map(category => {
+	const categories = [cabinetry, tables, stairs, beds, doors].map((category, i) => {
 		return (
-			<div className={styles.category}>
+			<div 
+				className={styles.category}
+				key={i}	
+			>
 				<h1 className={styles.title}>{category.title}</h1>
 				<div 
 					className={styles.images}
@@ -44,11 +49,12 @@ export default function GalleryPage({ cabinetry, tables, stairs, beds, doors }) 
 					{
 						category.collections.map(collection => {
 							return (
-								collection.images.map(image => {
+								collection.images.map((image, j) => {
 									return (
 										<div 
 											className={styles.image}
 											data-url={`${urlFor(image)}`}	
+											key={j}
 										>
 											<Image 
 												src={`${urlFor(image)}`}
@@ -56,6 +62,8 @@ export default function GalleryPage({ cabinetry, tables, stairs, beds, doors }) 
 												objectFit='cover'
 												width={400}
 												height={400}
+												placeholder='blur'
+												blurDataURL={blur}
 											/>
 										</div>
 									)
@@ -90,6 +98,9 @@ export default function GalleryPage({ cabinetry, tables, stairs, beds, doors }) 
 				url={modal.url}
 				closeModal={closeModal}
 			/>
+			{/* {
+			 modal.open ? <Modal open={modal.open} url={modal.url} closeModal={closeModal} /> : null
+			} */}
 		</div>
 	)
 }
