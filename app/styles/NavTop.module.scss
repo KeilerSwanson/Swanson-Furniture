@@ -37,7 +37,7 @@
 	left: 0;
 	opacity: 0;
 	visibility: hidden;
-	transition: var(--t1);
+	transition: var(--t2);
 	// transition: 1s;
 	display: flex;
   flex-direction: column;
@@ -51,7 +51,7 @@
 .menuItem {
 	// font-size: 3.25rem;
 	// font-weight: 300;
-	@include typography.menu-item;
+	@include typography.lg;
   // text-transform: uppercase;
 	cursor: pointer;
 	transition: var(--t1);
@@ -84,7 +84,7 @@
 
 .bar {
 	background: black;
-	transition: var(--t1);
+	transition: var(--t2);
 	height: 2px;
 }
 
@@ -100,8 +100,6 @@
 
 .iconCross {
 	composes: icon;
-	// top: .3rem;
-	// transform: translateY(.3rem);
 }
 
 .iconCross > .bar {
@@ -125,12 +123,15 @@
 		padding: 5% 20%;
 	}
 	.menuItem:hover {
-		color: #999;
+		opacity: .5;
 	}
-	.icon:hover > .bar {
-		background: #999;
-	}
+	// .icon:hover > .bar {
+	// 	background: #999;
+	// }
 	.logo:hover {
-		color: #999;
+		opacity: .5;
+	}
+	.icon:hover {
+		opacity: .5;
 	}
 }

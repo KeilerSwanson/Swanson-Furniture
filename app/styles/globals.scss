@@ -2,7 +2,6 @@
 
 :root {
 	box-sizing: border-box;
-	font-family: 'Montserrat', sans-serif;
   font-size: 10px;
 	--t1: .15s;
   --t2: .3s;
@@ -10,13 +9,14 @@
   --sr: 0.5rem 0.5rem 1.25rem -0.5rem #3333339f;
   --sd: 0 0.5rem 1.25rem -0.5rem #3333339f;
   --sdSml: 0 .5rem 1.25rem -0.75rem #3333339f;
-  --d1: #999;
+  --d1: rgb(170, 170, 170);
   --d2: #666;
   --d3: #333;
 }
 
 *, *:before, *:after {
   box-sizing: inherit;
+  font-family: 'Montserrat', sans-serif;
 }
 
 *:visited {

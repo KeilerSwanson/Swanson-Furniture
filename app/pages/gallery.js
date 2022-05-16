@@ -7,6 +7,7 @@ import blur from '../public/blur.png'
 import NavTop from '../components/NavTop'
 import Modal from '../components/Modal'
 import styles from '../styles/Gallery.module.scss'
+import ansleyKitchen from '../public/ansley-kitchen-1.jpg'
 
 const builder = imageUrlBuilder(client)
 function urlFor(source) {
@@ -16,7 +17,7 @@ function urlFor(source) {
 export default function GalleryPage({ cabinetry, tables, stairs, beds, doors }) {
 	const [modal, setModal] = useState({
 		open: false,
-		url: ''
+		url: ansleyKitchen
 	})
 
 	function openModal(target) {
@@ -31,7 +32,7 @@ export default function GalleryPage({ cabinetry, tables, stairs, beds, doors }) 
 	function closeModal() {
 		setModal({
 			open: false,
-			url: ''
+			url: modal.url
 		})
 	}
 
@@ -83,14 +84,11 @@ export default function GalleryPage({ cabinetry, tables, stairs, beds, doors }) 
         <meta charSet='utf-8' />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name='author' content='Keiler Swanson' />
-        <meta name='description' content="Fine custom furniture and interiors." />
+        <meta name='description' content="Fine custom furniture and living spaces." />
 				<link rel='icon' href='/favicon.ico' />
       </Head>
 			<NavTop />
-			<div 
-				className={styles.gallery}
-				// onClick={(e) => openModal(e.target)}
-			>
+			<div className={styles.gallery}>
 				{categories}
 			</div>
 			<Modal 
@@ -98,9 +96,6 @@ export default function GalleryPage({ cabinetry, tables, stairs, beds, doors }) 
 				url={modal.url}
 				closeModal={closeModal}
 			/>
-			{/* {
-			 modal.open ? <Modal open={modal.open} url={modal.url} closeModal={closeModal} /> : null
-			} */}
 		</div>
 	)
 }

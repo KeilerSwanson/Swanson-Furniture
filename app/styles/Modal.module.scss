@@ -13,6 +13,13 @@
 	justify-content: center;
 	align-items: center;
 	z-index: 3;
+	padding: 5% 7.5%;
+}
+
+.modalOpen {
+	composes: modal;
+	visibility: visible;
+	opacity: 1;
 }
 
 .nav {
@@ -72,6 +79,7 @@
 	height: 100%;
 	position: relative;
 	overflow: visible;
+	// cursor: zoom-in;
 }
 
 .image img {
@@ -79,23 +87,18 @@
 }
 
 @media screen and (min-width: 768px) {
-	.image {
-		max-height: 75%;
-		max-width: 85%;
-	}
-
-	.image img {
-		border-radius: .5rem;
+	.modal {
+		padding: 10% 20%;
 	}
 }
 
 @media screen and (min-width: 1366px) {
+	.modal {
+		padding: 10% 30%;
+	}
 	.nav {
 		padding: 2.5% 20%;
 		align-items: flex-end;
-	}
-	.image {
-		max-width: 50%;
 	}
 	.close:hover > .bar {
 		background: #999;

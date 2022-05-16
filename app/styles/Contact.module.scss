@@ -6,29 +6,31 @@
 	width: 100%;
 	height: 100vh;
 	height: calc(var(--vh) * 100);
-	justify-content: center;
+	// justify-content: center;
 }
 
 .contact > nav {
 	position: fixed !important;
-	top: 0;
+	// top: 0;
 }
 
 .formWrapper {
 	display: flex;
 	flex-direction: column;
-	padding: 5% 7.5% 0;
+	padding: 0 7.5%;
 	justify-content: center;
 	align-items: center;
 	position: relative;
+	flex: 1;
 }
 
-.tel {
-	font-size: 2.25rem;
-	font-weight: 400;
-	margin-bottom: 15%;
-	transition: var(--t1);
-}
+// .tel {
+// 	// font-size: 2.25rem;
+// 	// font-weight: 400;
+// 	@include typography.medium-header;
+// 	margin-bottom: 15%;
+// 	transition: var(--t1);
+// }
 
 .form {
 	display: flex;
@@ -43,10 +45,10 @@
 	opacity: 0;
 }
 
-.input, .message {
+.input {
 	@include typography.copy;
 	width: 100%;
-	border: solid 2px rgba(153, 153, 153, 0.539);
+	border: solid 2px var(--d1);
 	padding: .5rem;
 	color: black;
 	background: white;
@@ -59,7 +61,7 @@
 }
 
 .input::placeholder, .message::placeholder {
-	color: #999;
+	color: var(--d1);
 	@include typography.copy;
 }
 
@@ -70,28 +72,44 @@
 .message {
 	composes: input;
 	font-family: 'Montserrat', sans-serif;
-	min-height: 12.5rem;
+	min-height: 10rem;
+}
 
+.buttons {
+	display: flex;
+	gap: 1rem;
+	width: 100%;
+}
+
+.button {
+	background: var(--d3);
+	color: white;
+	padding: .6rem;
+	border-radius: .5rem;
+	@include typography.copy;
+	transition: var(--t1);
+	cursor: pointer;
+	flex: 1;
+	display: flex;
+	justify-content: center;
+	box-shadow: var(--sd);
+}
+
+.call {
+	composes: button;
 }
 
 .submit {
-	@include typography.copy;
-	background: #333;
-	color: white;
-	padding: .5rem;
-	border: solid 2px #333;
-	border-radius: .5rem;
-	cursor: pointer;
-	transition: var(--t1);
+	composes: button;
+	font-weight: 400 !important;
 }
 
 .submitLoading {
 	composes: submit;
+	background: var(--d2);
 }
 
 .response {
-	// font-size: 1.6rem;
-	// font-weight: 400;
 	@include typography.copy;
 	text-align: center;
 	visibility: hidden;
@@ -113,14 +131,10 @@
 }
 
 @media screen and (min-width: 1366px) {
-	.tel:hover {
-		color: #999;
-	}
 	.formWrapper {
-		padding: 2.5% 35% 0;
+		padding: 0 35%;
 	}
-	.submit:hover {
-		background: #666;
-		border: solid 2px #666;
+	.button:hover {
+		background: var(--d2);
 	}
 }

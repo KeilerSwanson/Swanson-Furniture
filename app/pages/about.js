@@ -15,7 +15,7 @@ export default function AboutPage() {
         <meta charSet='utf-8' />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name='author' content='Keiler Swanson' />
-        <meta name='description' content="Fine custom furniture and interiors." />
+        <meta name='description' content="Fine custom furniture and living spaces." />
 				<link rel='icon' href='/favicon.ico' />
       </Head>
 			<NavTop />
@@ -44,7 +44,7 @@ export default function AboutPage() {
 					/>
 				</div>
 				<p className={styles.copy}>
-					Scott Swanson is a self-taught designer and carpenter based out of Atlanta, GA. For more than 30 years, he’s been building fine furniture and living spaces for a wide variety of clients. His passion for the craft and love for collaboration keep him as inspired today as when he started. 
+					Scott Swanson is a designer and carpenter based out of Atlanta, GA. For more than 30 years, he’s been building fine furniture and living spaces for a wide range of clients. His passion for the craft and love for collaboration keep him as inspired today as when he started. 
 				</p>
 			</div>
 		</div>

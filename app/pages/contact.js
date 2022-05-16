@@ -52,12 +52,12 @@ export default function Contact() {
         <meta charSet='utf-8' />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name='author' content='Keiler Swanson' />
-        <meta name='description' content="Fine custom furniture and interiors." />
+        <meta name='description' content="Fine custom furniture and living spaces." />
 				<link rel='icon' href='/favicon.ico' />
       </Head>
 			<NavTop />
 			<div className={styles.formWrapper}>
-				<a className={styles.tel} href='tel:+1678-522-7026'>+1-678-522-7026</a>
+				{/* <a className={styles.tel} href='tel:+1678-522-7026'>+1-678-522-7026</a> */}
 				<form 
 					ref={refs.form}
 					className={styles.form}
@@ -107,13 +107,15 @@ export default function Contact() {
 						required={true}
 						maxLength={500}
 					/>
-					<button 
-						// type='submit'
-						className={submitClass}
-						onClick={submitForm}
-					>
-						{loading ? 'Sending...' : 'Send'}
-					</button>
+					<div className={styles.buttons}>
+						<a className={styles.call} href='tel:+1678-522-7026'>Call</a>
+						<button 
+							className={submitClass}
+							onClick={submitForm}
+						>
+							{loading ? 'Sending...' : 'Send'}
+						</button>
+					</div>
 					<div className={responseClass}>
 						{(response === 200) ? "Message sent successfully!" : "Sorry, there was an error."}
 					</div>

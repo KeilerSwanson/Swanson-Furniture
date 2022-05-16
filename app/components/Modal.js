@@ -1,28 +1,26 @@
 import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
-// import ansleyKitchen from '../public/ansley-kitchen-1.jpg'
 import blur from '../public/blur.png'
+import ansleyKitchen from '../public/ansley-kitchen-1.jpg'
 import styles from '../styles/Modal.module.scss'
 
 export default function Modal({ open, url, closeModal }) {
-	console.log('modal render')
 	const modalRef = useRef()
+	const modalClass = open ? styles.modalOpen : styles.modal
 
-	useEffect(() => {
-		console.log('modal did mount')
-		if (open) {
-			modalRef.current.style.cssText = 'opacity: 1; visibility: visible;'
-		}
-	})
+	// useEffect(() => {
+	// 	if (open) {
+	// 		modalRef.current.style.cssText = 'opacity: 1; visibility: visible;'
+	// 	}
+	// })
 
 	return (
 		<div 
 			ref={modalRef}
-			className={styles.modal}
+			className={modalClass}
 			onClick={() => {
-				console.log('close modal handler')
-				modalRef.current.style.cssText = 'opacity: 0; visibility: hidden;'
-				setTimeout(closeModal, 300)
+				// modalRef.current.style.cssText = 'opacity: 0; visibility: hidden;'
+				closeModal()
 			}}	
 		>
 			<nav className={styles.nav}>
@@ -34,8 +32,10 @@ export default function Modal({ open, url, closeModal }) {
 			</nav>	
 			<div className={styles.image}>
 				<Image
-					src={url ? url : blur}
+					src={url}
 					alt=''
+					// width={575}
+					// height={700}
 					layout='fill'
 					objectFit='contain'
 					priority

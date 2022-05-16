@@ -70,7 +70,7 @@ export default function Reviews() {
         <meta charSet='utf-8' />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name='author' content='Keiler Swanson' />
-        <meta name='description' content="Fine custom furniture and interiors." />
+        <meta name='description' content="Fine custom furniture and living spaces." />
 				<link rel='icon' href='/favicon.ico' />
       </Head>
 			<NavTop />
