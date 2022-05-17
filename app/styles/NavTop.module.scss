@@ -15,10 +15,7 @@
 .logo {
 	@include typography.logo;
 	z-index: 3;
-	// font-size: 1.6rem;
-	// font-weight: 500;
-	// text-transform: uppercase;
-	transition: var(--t1);
+	transition: var(--trans-1);
 }
 
 .logo > sup {
@@ -37,24 +34,18 @@
 	left: 0;
 	opacity: 0;
 	visibility: hidden;
-	transition: var(--t2);
-	// transition: 1s;
+	transition: var(--trans-2);
 	display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-	// gap: 2rem;
 	z-index: 2;
-	// transform: translateX(1rem);
 }
 
 .menuItem {
-	// font-size: 3.25rem;
-	// font-weight: 300;
 	@include typography.lg;
-  // text-transform: uppercase;
 	cursor: pointer;
-	transition: var(--t1);
+	transition: var(--trans-1);
 	padding: 1rem 0;
 }
 
@@ -62,13 +53,11 @@
 	composes: menu;
 	visibility: visible;
 	opacity: 1;
-	// transform: translateX(0);
 }
 
 .icon {
 	width: 3rem;
 	height: 3rem;
-	// height: 100%;
 	justify-content: center;
 	display: flex;
 	flex-direction: column;
@@ -76,7 +65,7 @@
 	background: transparent;
 	position: relative;
 	gap: .4rem;
-	transition: var(--t1);
+	transition: var(--trans-1);
 	z-index: 3;
 	cursor: pointer;
 	transform-origin: center;
@@ -84,7 +73,7 @@
 
 .bar {
 	background: black;
-	transition: var(--t2);
+	transition: var(--trans-2);
 	height: 2px;
 }
 
@@ -115,6 +104,12 @@
 	transform: rotate(135deg);
 }
 
+@media screen and (min-width: 768px) {
+	.menu {
+		align-items: center;
+	}
+}
+
 @media screen and (min-width: 1366px) {
 	.nav {
 		padding: 2.5% 20%;
@@ -122,16 +117,7 @@
 	.menu {
 		padding: 5% 20%;
 	}
-	.menuItem:hover {
-		opacity: .5;
-	}
-	// .icon:hover > .bar {
-	// 	background: #999;
-	// }
-	.logo:hover {
-		opacity: .5;
-	}
-	.icon:hover {
-		opacity: .5;
+	.menuItem:hover, .logo:hover, .icon:hover {
+		opacity: var(--opac-1);
 	}
 }

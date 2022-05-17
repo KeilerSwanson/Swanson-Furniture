@@ -1,36 +1,20 @@
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import styles from '../styles/NavTop.module.scss'
-// import effects from '../styles/Effects.module.scss'
 
 export default function NavTop() {
 	const [menuOpen, setMenuOpen] = useState(false)
 	const menuClass = menuOpen ? styles.menuOpen : styles.menu
 	const iconClass = menuOpen ? styles.iconCross : styles.icon
 
-	// function closeMenu() {
-	// 	console.log('close')
-	// 	setMenuOpen(false)
-	// }
-
-	// function openMenu() {
-	// 	console.log('open')
-	// 	setMenuOpen(true)
-	// }
-
 	const toggleMenu = () => setMenuOpen(!menuOpen)
 
 	return (
-		<nav 
-			className={styles.nav}
-		>
+		<nav className={styles.nav}>
 			<Link href='/'>
 				<a className={styles.logo}>Swanson Furniture</a>
 			</Link>
-			<menu 
-				className={menuClass}
-				// onClick={closeMenu}	
-			>
+			<menu className={menuClass}>
 				<Link href='/gallery'>
 					<a className={styles.menuItem}>Gallery</a>
 				</Link>

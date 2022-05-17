@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import '../styles/globals.scss'
+import '../styles/base.scss'
 
 function MyApp({ Component, pageProps }) {
 

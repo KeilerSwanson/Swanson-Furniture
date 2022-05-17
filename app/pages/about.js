@@ -1,13 +1,13 @@
 import Head from 'next/head'
-import NavTop from '../components/NavTop'
 import Image from 'next/image'
+import NavTop from '../components/NavTop'
 import dadSmile from '../public/dad-smile.jpeg'
 import dadWork from '../public/dad-working.jpeg'
 import blur from '../public/blur.png'
-// import AboutMosaic from '../components/AboutMosaic'
-import styles from '../styles/About.module.scss'
+import styles from '../styles/about.module.scss'
 
 export default function AboutPage() {
+	
 	return (
 		<div className={styles.about}>
 			<Head>
@@ -19,7 +19,6 @@ export default function AboutPage() {
 				<link rel='icon' href='/favicon.ico' />
       </Head>
 			<NavTop />
-			{/* <AboutMosaic /> */}
 			<div className={styles.mosaic}>
 				<div className={styles.image}>
 					<Image 

@@ -1,81 +1,26 @@
 import Head from 'next/head'
-import { useState } from 'react'
 import Image from 'next/image'
+import { useState } from 'react'
+import { urlFor } from '../lib/utils'
 import client from '../client'
-import imageUrlBuilder from '@sanity/image-url'
-import blur from '../public/blur.png'
 import NavTop from '../components/NavTop'
 import Modal from '../components/Modal'
-import styles from '../styles/Gallery.module.scss'
-import ansleyKitchen from '../public/ansley-kitchen-1.jpg'
-
-const builder = imageUrlBuilder(client)
-function urlFor(source) {
-  return builder.image(source)
-}
+import blur from '../public/blur.png'
+import styles from '../styles/gallery.module.scss'
 
 export default function GalleryPage({ cabinetry, tables, stairs, beds, doors }) {
-	const [modal, setModal] = useState({
-		open: false,
-		url: ansleyKitchen
-	})
+	const [modalUrl, setModalUrl] = useState('')
 
 	function openModal(target) {
 		if (target.dataset.url) {
-			setModal({
-				open: true,
-				url: target.dataset.url
-			})
+			setModalUrl(target.dataset.url)
 		}
 	}
 
 	function closeModal() {
-		setModal({
-			open: false,
-			url: modal.url
-		})
-	}
 
-	const categories = [cabinetry, tables, stairs, beds, doors].map((category, i) => {
-		return (
-			<div 
-				className={styles.category}
-				key={i}	
-			>
-				<h1 className={styles.title}>{category.title}</h1>
-				<div 
-					className={styles.images}
-					onClick={(e) => openModal(e.target)}	
-				>
-					{
-						category.collections.map(collection => {
-							return (
-								collection.images.map((image, j) => {
-									return (
-										<div 
-											className={styles.image}
-											data-url={`${urlFor(image)}`}	
-											key={j}
-										>
-											<Image 
-												src={`${urlFor(image)}`}
-												alt='' 
-												objectFit='cover'
-												width={400}
-												height={400}
-												placeholder='blur'
-												blurDataURL={blur}
-											/>
-										</div>
-									)
-								})
-							)
-						})
-					}
-				</div>	
-			</div>
-		)
-	})
+		setModalUrl('')
+	}
 
 	return (
 		<div className={styles.galleryPage}>
@@ -89,13 +34,44 @@ export default function GalleryPage({ cabinetry, tables, stairs, beds, doors }) 
       </Head>
 			<NavTop />
 			<div className={styles.gallery}>
-				{categories}
+				{
+					[cabinetry, tables, stairs, beds, doors].map((category, i) => {
+						return (
+							<div className={styles.category} key={i}>
+								<h1 className={styles.title}>{category.title}</h1>
+								<div className={styles.images} onClick={(e) => openModal(e.target)}>
+									{
+										category.collections.map(collection => {
+											return (
+												collection.images.map((image, j) => {
+													return (
+														<div 
+															className={styles.image}
+															data-url={`${urlFor(image)}`}	
+															key={j}
+														>
+															<Image 
+																src={`${urlFor(image)}`}
+																alt='' 
+																objectFit='cover'
+																width={400}
+																height={400}
+																placeholder='blur'
+																blurDataURL={blur}
+															/>
+														</div>
+													)
+												})
+											)
+										})
+									}
+								</div>	
+							</div>
+						)
+					})
+				}
 			</div>
-			<Modal 
-				open={modal.open}	
-				url={modal.url}
-				closeModal={closeModal}
-			/>
+			<Modal url={modalUrl} closeModal={closeModal} />
 		</div>
 	)
 }

@@ -16,7 +16,6 @@
 .category {
 	display: flex;
 	flex-direction: column;
-	// margin-bottom: 10%;
 	margin-bottom: 40%;
 }
 
@@ -25,7 +24,7 @@
 }
 
 .title {
-	@include typography.med;
+	@include typography.logo;
 	margin-bottom: 5%;
 }
 
@@ -34,13 +33,12 @@
 	position: relative;
 	grid-template-columns: 1fr 1fr;
 	gap: 1rem;
-	// margin-top: 5%;
 }
 
 .image {
 	cursor: pointer;
-	transition: var(--t1);
-	box-shadow: var(--sdSml);
+	transition: var(--trans-1);
+	box-shadow: var(--shad-down-sm);
 }
 
 .image span, .image img {
@@ -75,6 +73,6 @@
 		margin-bottom: 2.5%;
 	}
 	.image:hover {
-		opacity: .75;
+		opacity: var(--opac-2);
 	}
 }

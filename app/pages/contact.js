@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import { useRef, useState } from 'react'
 import NavTop from '../components/NavTop'
-import styles from '../styles/Contact.module.scss'
-// import effects from '../styles/Effects.module.scss'
+import LoadingSpinner from '../components/LoadingSpinner'
+import styles from '../styles/contact.module.scss'
 
 export default function Contact() {
 	const [loading, setLoading] = useState(false)
@@ -17,7 +17,7 @@ export default function Contact() {
 		message: useRef()
 	}
 
-	function validForm(...inputs) {
+	function isValidForm(...inputs) {
 		for (let i = 0; i < inputs.length; i++) {
 			if (inputs[i].value.length === 0) return false
 		}
@@ -26,9 +26,9 @@ export default function Contact() {
 
 	async function submitForm(e) {
 		e.preventDefault()
-		if (!validForm(refs.name.current, refs.email.current, refs.phone.current, refs.message.current)) return
-
+		if (!isValidForm(refs.name.current, refs.email.current, refs.phone.current, refs.message.current)) return
 		setLoading(true)
+
 		try {
 			const formData = new FormData(refs.form.current)
 			const resp = await fetch('/', {
@@ -36,11 +36,11 @@ export default function Contact() {
 				headers: { "Content-Type": "application/x-www-form-urlencoded" },
 				body: new URLSearchParams(formData).toString()
 			})
-			console.log('resp: ', resp)
 			setResponse(resp.status)
 		} catch (err) {
 			alert(`Sorry, there was an error: '${err}'. Please refresh the page and try again.`)
 		}
+
 		setLoading(false)
 		refs.form.current.reset()
 	}
@@ -57,7 +57,6 @@ export default function Contact() {
       </Head>
 			<NavTop />
 			<div className={styles.formWrapper}>
-				{/* <a className={styles.tel} href='tel:+1678-522-7026'>+1-678-522-7026</a> */}
 				<form 
 					ref={refs.form}
 					className={styles.form}
@@ -77,7 +76,7 @@ export default function Contact() {
 						type='text' 
 						placeholder='Name' 
 						className={styles.name}
-						required={true}
+						// required={true}
 						maxLength={50}
 					/>
 					<label className={styles.label} htmlFor='email'>Email</label>
@@ -87,7 +86,7 @@ export default function Contact() {
 						type='email' 
 						placeholder='Email' 
 						className={styles.email}
-						required={true}
+						// required={true}
 					/>
 					<label className={styles.label} htmlFor='phone'>Phone</label>
 					<input
@@ -96,7 +95,7 @@ export default function Contact() {
 						type='tel'
 						placeholder='Phone'
 						className={styles.phone}
-						required={true}
+						// required={true}
 					/>
 					<label className={styles.label} htmlFor='message'>Message</label>
 					<textarea 
@@ -104,16 +103,13 @@ export default function Contact() {
 						name='message' 
 						placeholder='Message' 
 						className={styles.message}
-						required={true}
+						// required={true}
 						maxLength={500}
 					/>
 					<div className={styles.buttons}>
 						<a className={styles.call} href='tel:+1678-522-7026'>Call</a>
-						<button 
-							className={submitClass}
-							onClick={submitForm}
-						>
-							{loading ? 'Sending...' : 'Send'}
+						<button className={submitClass} onClick={submitForm}>
+							{loading ? <LoadingSpinner /> : 'Send'}
 						</button>
 					</div>
 					<div className={responseClass}>

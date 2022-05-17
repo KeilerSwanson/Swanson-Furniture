@@ -1,12 +1,8 @@
+@use 'layout';
 @use 'typography';
 
 .reviews {
-	width: 100%;
-	height: 100vh;
-	height: calc(var(--vh) * 100);
-	display: flex;
-	flex-direction: column;
-	// justify-content: center;
+	@include layout.page;
 }
 
 .dots {
@@ -18,8 +14,8 @@
 	border-radius: 50px;
 	width: 5px;
 	height: 5px;
-	background: #999;
-	transition: var(--t1);
+	background: var(--dark-1);
+	transition: var(--trans-1);
 }
 
 .dotCurrent {
@@ -33,7 +29,7 @@
 	align-items: center;
 	justify-content: center;
 	padding: 0 7.5%;
-	transition: var(--t2);
+	transition: var(--trans-2);
 	opacity: 1;
 	flex: 1;
 }
@@ -45,7 +41,7 @@
 }
 
 .author {
-	@include typography.med;
+	@include typography.logo;
 }
 
 .controls {

@@ -1,7 +1,7 @@
 .arrow {
 	padding: 10% 0;
 	position: relative;
-	transition: var(--t1);
+	transition: var(--trans-1);
 	cursor: pointer;
 }
 
@@ -15,7 +15,7 @@
 	height: 2px;
 	background: black;
 	position: relative;
-	transition: var(--t1);
+	transition: var(--trans-1);
 }
 
 .arrowInner::before, .arrowInner::after {
@@ -26,7 +26,7 @@
 	right: 0;
 	background: black;
 	transform-origin: right;
-	transition: var(--t1);
+	transition: var(--trans-1);
 }
 
 .arrowInner::before {
@@ -45,12 +45,6 @@
 
 @media screen and (min-width: 1366px) {
 	.arrow:hover {
-		// transform: translateX(.5rem);
+		opacity: var(--opac-1);
 	}
-	.arrow:hover > .arrowInner, .arrow:hover > .arrowInner::before, .arrow:hover > .arrowInner::after {
-		background: #999;
-	}
-	// .arrowLeft:hover {
-	// 	transform: rotate(180deg) translateX(.5rem);
-	// }
 }
