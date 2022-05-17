@@ -76,7 +76,6 @@ export default function Contact() {
 						type='text' 
 						placeholder='Name' 
 						className={styles.name}
-						// required={true}
 						maxLength={50}
 					/>
 					<label className={styles.label} htmlFor='email'>Email</label>
@@ -86,7 +85,6 @@ export default function Contact() {
 						type='email' 
 						placeholder='Email' 
 						className={styles.email}
-						// required={true}
 					/>
 					<label className={styles.label} htmlFor='phone'>Phone</label>
 					<input
@@ -95,7 +93,6 @@ export default function Contact() {
 						type='tel'
 						placeholder='Phone'
 						className={styles.phone}
-						// required={true}
 					/>
 					<label className={styles.label} htmlFor='message'>Message</label>
 					<textarea 
@@ -103,7 +100,6 @@ export default function Contact() {
 						name='message' 
 						placeholder='Message' 
 						className={styles.message}
-						// required={true}
 						maxLength={500}
 					/>
 					<div className={styles.buttons}>

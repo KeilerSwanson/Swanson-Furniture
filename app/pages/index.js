@@ -1,13 +1,11 @@
-import { useEffect } from 'react'
 import Head from 'next/head'
-import NavTop from '../components/NavTop'
 import Image from 'next/image'
+import NavTop from '../components/NavTop'
 import ansleyLiving from '../public/ansley-living-2.jpg'
 import ansleyKitchen5 from '../public/ansley-kitchen-5.jpg'
 import ansleyKitchen1 from '../public/ansley-kitchen-1.jpg'
 import blur from '../public/blur.png'
 import styles from '../styles/index.module.scss'
-// import effects from '../styles/Effects.module.scss'
 
 export default function Home() {
 
