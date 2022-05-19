@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&Inter:wght@200;300;400;500&display=swap');
 
 :root {
-  // font-family: 'Montserrat', sans-serif;
 	box-sizing: border-box;
   font-size: 10px;
   // Transitions
@@ -18,6 +17,7 @@
   --dark-1: rgb(170, 170, 170);
   --dark-2: #666;
   --dark-3: #292b29;
+  --red-1: rgb(233, 64, 41);
   // Opacity
   --opac-1: .5;
   --opac-2: .75;

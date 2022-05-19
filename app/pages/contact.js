@@ -18,10 +18,16 @@ export default function Contact() {
 	}
 
 	function isValidForm(...inputs) {
+		let errorCount = 0
 		for (let i = 0; i < inputs.length; i++) {
-			if (inputs[i].value.length === 0) return false
+			if (inputs[i].value.length === 0) {
+				inputs[i].style.cssText = `border-left: solid 2px var(--red-1);`
+				errorCount += 1
+			} else {
+				inputs[i].style.cssText = 'border-left: solid 2px black;'
+			}
 		}
-		return true
+		return (errorCount === 0)
 	}
 
 	async function submitForm(e) {
