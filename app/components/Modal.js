@@ -1,14 +1,14 @@
 import Image from 'next/image'
 import blur from '../public/blur.png'
-import LoadingSpinner from '../components/LoadingSpinner'
 import styles from '../styles/Modal.module.scss'
 
-export default function Modal({ url, closeModal }) {
-	const modalClass = url ? styles.modalOpen : styles.modal
+export default function Modal({ url, closeModal, modalRef }) {
+	const imageClass = url ? styles.image : styles.imageBlur
 
 	return (
 		<div 
-			className={modalClass}
+			ref={modalRef}
+			className={styles.modal}
 			onClick={closeModal}	
 		>
 			<nav className={styles.nav}>
@@ -19,19 +19,17 @@ export default function Modal({ url, closeModal }) {
 				</button>
 			</nav>	
 			{
-				url ?
-				<div className={styles.image}>
+				<div className={imageClass}>
 					<Image
-						src={url}
-						alt=''
+						src={url ? url : blur}
+						// alt=''
 						layout='fill'
 						objectFit='contain'
-						// priority
-						// placeholder='blur'
-						// blurDataURL={blur}
+						priority
+						placeholder='blur'
+						blurDataURL={blur}
 					/>
-				</div> :
-				<LoadingSpinner />
+				</div>
 			}
 		</div>
 	)

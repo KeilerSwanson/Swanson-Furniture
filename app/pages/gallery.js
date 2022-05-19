@@ -1,25 +1,31 @@
 import Head from 'next/head'
-import Image from 'next/image'
-import { useState } from 'react'
-import { urlFor } from '../lib/utils'
+import { useState, useRef } from 'react'
 import client from '../client'
 import NavTop from '../components/NavTop'
 import Modal from '../components/Modal'
-import blur from '../public/blur.png'
+import Category from '../components/Category'
 import styles from '../styles/gallery.module.scss'
 
 export default function GalleryPage({ cabinetry, tables, stairs, beds, doors }) {
 	const [modalUrl, setModalUrl] = useState('')
+	const modalRef = useRef()
 
 	function openModal(target) {
 		if (target.dataset.url) {
-			setModalUrl(target.dataset.url)
+			modalRef.current.style.cssText = 'opacity: 1; visibility: visible;'
+			console.log('modal opacity to 1')
+			setTimeout(() => {
+				setModalUrl(target.dataset.url)
+			}, 300)
 		}
 	}
 
 	function closeModal() {
-
-		setModalUrl('')
+		modalRef.current.style.cssText = 'opacity: 0; visibility: hidden;'
+		console.log('modal opacity to 0')
+		setTimeout(() => {
+			setModalUrl('')
+		}, 300)
 	}
 
 	return (
@@ -37,41 +43,16 @@ export default function GalleryPage({ cabinetry, tables, stairs, beds, doors }) 
 				{
 					[cabinetry, tables, stairs, beds, doors].map((category, i) => {
 						return (
-							<div className={styles.category} key={i}>
-								<h1 className={styles.title}>{category.title}</h1>
-								<div className={styles.images} onClick={(e) => openModal(e.target)}>
-									{
-										category.collections.map(collection => {
-											return (
-												collection.images.map((image, j) => {
-													return (
-														<div 
-															className={styles.image}
-															data-url={`${urlFor(image)}`}	
-															key={j}
-														>
-															<Image 
-																src={`${urlFor(image)}`}
-																alt='' 
-																objectFit='cover'
-																width={400}
-																height={400}
-																placeholder='blur'
-																blurDataURL={blur}
-															/>
-														</div>
-													)
-												})
-											)
-										})
-									}
-								</div>	
-							</div>
+							<Category 
+								category={category}	
+								keyProp={i}
+								openModal={openModal}
+							/>
 						)
 					})
 				}
 			</div>
-			<Modal url={modalUrl} closeModal={closeModal} />
+			<Modal url={modalUrl} closeModal={closeModal} modalRef={modalRef} />
 		</div>
 	)
 }

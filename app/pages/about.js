@@ -34,10 +34,9 @@ export default function AboutPage() {
 				<div className={styles.image}>
 					<Image 
 						src={dadSmile}
-						alt='Scott Swanson smiling'	
+						alt='Scott Swanson smiling in his shop'	
 						layout='fill'
 						objectFit='cover'
-						priority
 						placeholder='blur'
 						blurDataURL={blur}
 					/>

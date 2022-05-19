@@ -24,7 +24,7 @@ export default function Home() {
 				<div className={styles.image}>
 					<Image 
 						src={ansleyLiving} 
-						alt=''
+						alt='Modern walnut kitchen cabinetry'
 						layout='fill'
 						objectFit='cover'
 						priority	
@@ -35,10 +35,9 @@ export default function Home() {
 				<div className={styles.image}>
 					<Image 
 						src={ansleyKitchen5} 
-						alt=''
+						alt='Modern walnut kitchen cabinetry'
 						layout='fill'
-						objectFit='cover'
-						priority	
+						objectFit='cover'	
 						placeholder='blur'
 						blurDataURL={blur}
 					/>
@@ -46,10 +45,9 @@ export default function Home() {
 				<div className={styles.image}>
 					<Image 
 						src={ansleyKitchen1} 
-						alt=''
+						alt='Modern walnut kitchen cabinetry'
 						layout='fill'
-						objectFit='cover'
-						priority	
+						objectFit='cover'	
 						placeholder='blur'
 						blurDataURL={blur}
 					/>
