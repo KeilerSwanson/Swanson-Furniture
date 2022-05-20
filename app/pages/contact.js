@@ -21,10 +21,10 @@ export default function Contact() {
 		let errorCount = 0
 		for (let i = 0; i < inputs.length; i++) {
 			if (inputs[i].value.length === 0) {
-				inputs[i].style.cssText = `border-left: solid 2px var(--red-1);`
+				inputs[i].style.cssText = `border-bottom: solid 2px goldenrod;`
 				errorCount += 1
 			} else {
-				inputs[i].style.cssText = 'border-left: solid 2px black;'
+				inputs[i].style.cssText = 'border-bottom: solid 2px black;'
 			}
 		}
 		return (errorCount === 0)

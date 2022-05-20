@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { useState, useRef, useEffect } from 'react'
+import { useState, useRef, useEffect, useCallback } from 'react'
 import NavTop from '../components/NavTop'
 import Arrow from '../components/Arrow'
 import { reviews } from '../public/reviews'
@@ -29,6 +29,14 @@ export default function Reviews() {
 		}, 300)
 	}
 
+// const nextReview = useCallback(() => {
+// 	reviewRef.current.style.cssText = 'opacity: 0;'
+// 	setTimeout(() => {
+// 		const nextIdx = currIdx < (reviews.length - 1) ? currIdx + 1 : 0
+// 		setCurrIdx(nextIdx)
+// 	}, 300)
+// }, [reviewRef, currIdx, setCurrIdx])
+
 	function prevReview() {
 		reviewRef.current.style.cssText = 'opacity: 0;'
 		setTimeout(() => {
@@ -36,6 +44,14 @@ export default function Reviews() {
 			setCurrIdx(prevIdx)
 		}, 300)
 	}
+
+	// const prevReview = useCallback(() => {
+	// 	reviewRef.current.style.cssText = 'opacity: 0;'
+	// 	setTimeout(() => {
+	// 		const prevIdx = currIdx > 0 ? currIdx - 1 : (reviews.length - 1)
+	// 		setCurrIdx(prevIdx)
+	// 	}, 300)
+	// }, [reviewRef, currIdx, setCurrIdx])
 
 	return (
 		<div className={styles.reviews}>

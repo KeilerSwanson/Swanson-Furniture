@@ -1,18 +1,11 @@
 import Image from 'next/image'
-import blur from '../public/blur.png'
 import styles from '../styles/Modal.module.scss'
 
-export default function Modal({ url, closeModal, modalRef }) {
-	// const imageClass = url ? styles.image : styles.imageBlur
-	console.log('modal render')
+export default function Modal({ url, closeModal }) {
 	const modalClass = url ? styles.modalOpen : styles.modal
 
 	return (
-		<div 
-			// ref={modalRef}
-			className={modalClass}
-			onClick={closeModal}	
-		>
+		<div className={modalClass} onClick={closeModal}>
 			<nav className={styles.nav}>
 				<h1 className={styles.dummyLogo}>Swanson Furniture</h1>
 				<button className={styles.close}>
@@ -26,24 +19,14 @@ export default function Modal({ url, closeModal, modalRef }) {
 						url ? 
 						<Image
 							src={url}
-							// alt=''
 							layout='fill'
 							objectFit='contain'
 							priority
 							placeholder='blur'
-							blurDataURL={blur}
+							blurDataURL='/blur.png'
 						/> :
 						null
 					}
-					{/* <Image
-						src={url}
-						// alt=''
-						layout='fill'
-						objectFit='contain'
-						priority
-						placeholder='blur'
-						blurDataURL={blur}
-					/> */}
 				</div>
 			}
 		</div>

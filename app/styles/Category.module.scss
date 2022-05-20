@@ -22,24 +22,6 @@
 	gap: 1rem;
 }
 
-.image {
-	cursor: pointer;
-	transition: var(--trans-1);
-	box-shadow: var(--shad-down-sm);
-}
-
-.image span, .image img {
-	pointer-events: none;
-}
-
-.image > span {
-	height: 100% !important;
-}
-
-.image img {
-	border-radius: .5rem;
-}
-
 @media screen and (min-width: 768px) {
 	.category {
 		margin-bottom: 30%;

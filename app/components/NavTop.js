@@ -1,8 +1,8 @@
 import Link from 'next/link'
-import { useState } from 'react'
+import { useState, memo } from 'react'
 import styles from '../styles/NavTop.module.scss'
 
-export default function NavTop() {
+function NavTop() {
 	const [menuOpen, setMenuOpen] = useState(false)
 	const menuClass = menuOpen ? styles.menuOpen : styles.menu
 	const iconClass = menuOpen ? styles.iconCross : styles.icon
@@ -28,10 +28,7 @@ export default function NavTop() {
 					<a className={styles.menuItem}>Contact</a>
 				</Link>
 			</menu>
-			<button 
-				className={iconClass} 
-				onClick={toggleMenu}
-			>
+			<button className={iconClass} onClick={toggleMenu}>
 				<div className={styles.bar2} />
 				<div className={styles.bar3} />
 			</button>
@@ -39,3 +36,4 @@ export default function NavTop() {
 	)
 }
 
+export default memo(NavTop)

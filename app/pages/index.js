@@ -1,10 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import NavTop from '../components/NavTop'
-import ansleyLiving from '../public/ansley-living-2.jpg'
-import ansleyKitchen5 from '../public/ansley-kitchen-5.jpg'
-import ansleyKitchen1 from '../public/ansley-kitchen-1.jpg'
-import blur from '../public/blur.png'
 import styles from '../styles/index.module.scss'
 
 export default function Home() {
@@ -23,33 +19,35 @@ export default function Home() {
 			<div className={styles.mosaic}>
 				<div className={styles.image}>
 					<Image 
-						src={ansleyLiving} 
+						src='/ansley-living-2.jpg'
 						alt='Modern walnut kitchen cabinetry'
 						layout='fill'
 						objectFit='cover'
 						priority	
 						placeholder='blur'
-						blurDataURL={blur}
+						blurDataURL='/blur.png'
 					/>
 				</div>
 				<div className={styles.image}>
 					<Image 
-						src={ansleyKitchen5} 
+						src='/ansley-kitchen-5.jpg'
 						alt='Modern walnut kitchen cabinetry'
 						layout='fill'
 						objectFit='cover'	
+						priority
 						placeholder='blur'
-						blurDataURL={blur}
+						blurDataURL='/blur.png'
 					/>
 				</div>
 				<div className={styles.image}>
 					<Image 
-						src={ansleyKitchen1} 
+						src='/ansley-kitchen-1.jpg'
 						alt='Modern walnut kitchen cabinetry'
 						layout='fill'
 						objectFit='cover'	
+						priority
 						placeholder='blur'
-						blurDataURL={blur}
+						blurDataURL='/blur.png'
 					/>
 				</div>
 			</div>

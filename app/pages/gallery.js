@@ -1,36 +1,26 @@
 import Head from 'next/head'
-import { useState, useRef } from 'react'
+import { useState, useCallback } from 'react'
 import client from '../client'
 import NavTop from '../components/NavTop'
 import Modal from '../components/Modal'
 import Category from '../components/Category'
-// import ansley from '../public/ansley-kitchen-1.jpg'
 import styles from '../styles/gallery.module.scss'
 
 export default function GalleryPage({ cabinetry, tables, stairs, beds, doors }) {
 	const [modalUrl, setModalUrl] = useState('')
-	// const modalRef = useRef()
 
-	function openModal(target) {
+	const openModal = useCallback((target) => {
 		if (target.dataset.url) {
-			// modalRef.current.style.cssText = 'opacity: 1; visibility: visible;'
-			// setTimeout(() => {
-			// 	setModalUrl(target.dataset.url)
-			// }, 300)
 			setModalUrl(target.dataset.url)
 		}
-	}
+	}, [setModalUrl])
 
 	function closeModal() {
-		// modalRef.current.style.cssText = 'opacity: 0; visibility: hidden;'
-		// setTimeout(() => {
-		// 	setModalUrl(ansley)
-		// }, 300)
 		setModalUrl('')
 	}
 
 	return (
-		<div className={styles.galleryPage}>
+		<div className={styles.gallery}>
 			<Head>
         <title>Gallery | Swanson Furniture</title>
         <meta charSet='utf-8' />
@@ -40,13 +30,13 @@ export default function GalleryPage({ cabinetry, tables, stairs, beds, doors }) 
 				<link rel='icon' href='/favicon.ico' />
       </Head>
 			<NavTop />
-			<div className={styles.gallery}>
+			<div className={styles.categories}>
 				{
 					[cabinetry, tables, stairs, beds, doors].map((category, i) => {
 						return (
 							<Category 
 								category={category}	
-								keyProp={i}
+								key={i}
 								openModal={openModal}
 							/>
 						)

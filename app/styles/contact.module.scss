@@ -30,7 +30,6 @@
 .label {
 	position: absolute;
 	visibility: hidden;
-	// opacity: 0;
 }
 
 .input {
@@ -38,15 +37,10 @@
 	width: 100%;
 	padding: 1rem;
 	color: black;
-	// box-shadow: var(--shad-border);
 	border: solid 2px var(--dark-2);
 	border-radius: .5rem;
 	transition: var(--trans-1);
 }
-
-// .input:valid {
-// 	border: solid 2px green;
-// }
 
 .input::placeholder, .message::placeholder {
 	color: var(--dark-1);

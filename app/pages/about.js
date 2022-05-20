@@ -1,9 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import NavTop from '../components/NavTop'
-import dadSmile from '../public/dad-smile.jpeg'
-import dadWork from '../public/dad-working.jpeg'
-import blur from '../public/blur.png'
 import styles from '../styles/about.module.scss'
 
 export default function AboutPage() {
@@ -22,23 +19,24 @@ export default function AboutPage() {
 			<div className={styles.mosaic}>
 				<div className={styles.image}>
 					<Image 
-						src={dadWork}
+						src='/dad-working.jpeg'
 						alt='Scott Swanson hand-planing a table'	
 						layout='fill'
 						objectFit='cover'
 						priority
 						placeholder='blur'
-						blurDataURL={blur}
+						blurDataURL='/blur.png'
 					/>
 				</div>
 				<div className={styles.image}>
 					<Image 
-						src={dadSmile}
+						src='/dad-smile.jpeg'
 						alt='Scott Swanson smiling in his shop'	
 						layout='fill'
 						objectFit='cover'
+						priority
 						placeholder='blur'
-						blurDataURL={blur}
+						blurDataURL='/blur.png'
 					/>
 				</div>
 				<p className={styles.copy}>
