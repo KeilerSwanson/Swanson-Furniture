@@ -15,13 +15,10 @@ export default function Reviews() {
 	})
 
 	useEffect(() => {
-		firstMount.current = false
-	}, [])
-
-	useEffect(() => {
 		if (!firstMount.current) {
 			reviewRef.current.style.cssText = 'opacity: 1;'
 		}
+		firstMount.current = false
 	})
 	
 	function nextReview() {

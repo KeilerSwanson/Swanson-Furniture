@@ -4,28 +4,29 @@ import client from '../client'
 import NavTop from '../components/NavTop'
 import Modal from '../components/Modal'
 import Category from '../components/Category'
+// import ansley from '../public/ansley-kitchen-1.jpg'
 import styles from '../styles/gallery.module.scss'
 
 export default function GalleryPage({ cabinetry, tables, stairs, beds, doors }) {
 	const [modalUrl, setModalUrl] = useState('')
-	const modalRef = useRef()
+	// const modalRef = useRef()
 
 	function openModal(target) {
 		if (target.dataset.url) {
-			modalRef.current.style.cssText = 'opacity: 1; visibility: visible;'
-			console.log('modal opacity to 1')
-			setTimeout(() => {
-				setModalUrl(target.dataset.url)
-			}, 300)
+			// modalRef.current.style.cssText = 'opacity: 1; visibility: visible;'
+			// setTimeout(() => {
+			// 	setModalUrl(target.dataset.url)
+			// }, 300)
+			setModalUrl(target.dataset.url)
 		}
 	}
 
 	function closeModal() {
-		modalRef.current.style.cssText = 'opacity: 0; visibility: hidden;'
-		console.log('modal opacity to 0')
-		setTimeout(() => {
-			setModalUrl('')
-		}, 300)
+		// modalRef.current.style.cssText = 'opacity: 0; visibility: hidden;'
+		// setTimeout(() => {
+		// 	setModalUrl(ansley)
+		// }, 300)
+		setModalUrl('')
 	}
 
 	return (
@@ -52,7 +53,7 @@ export default function GalleryPage({ cabinetry, tables, stairs, beds, doors }) 
 					})
 				}
 			</div>
-			<Modal url={modalUrl} closeModal={closeModal} modalRef={modalRef} />
+			<Modal url={modalUrl} closeModal={closeModal} />
 		</div>
 	)
 }
