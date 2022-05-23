@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import NavTop from '../components/NavTop'
 import styles from '../styles/error.module.scss'
 
