@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import styles from '../styles/Modal.module.scss'
 
-export default function Modal({ url, closeModal }) {
+export default function Modal({ url = '/blur.png', closeModal }) {
 	const modalClass = url ? styles.modalOpen : styles.modal
 
 	return (

@@ -17,6 +17,7 @@ node_modules
 # misc
 .DS_Store
 *.pem
+/swanson-furniture-images
 
 # debug
 npm-debug.log*
