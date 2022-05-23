@@ -40,7 +40,7 @@ export default function AboutPage() {
 					/>
 				</div>
 				<p className={styles.copy}>
-					Scott Swanson is a designer and carpenter based out of Atlanta, GA. For more than 30 years, he’s been building fine furniture and living spaces for a wide range of clients. His passion for the craft and love for collaboration keep him as inspired today as when he started. 
+					Scott Swanson is a designer and carpenter specializing in fine furniture and interiors. For more than 30 years, he’s been helping clients of all kinds bring their ideas to life. His passion for the craft and love for collaboration keep him as inspired today as when he started.
 				</p>
 			</div>
 		</div>

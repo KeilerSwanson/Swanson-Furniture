@@ -28,7 +28,7 @@ function NavTop() {
 					<a className={styles.menuItem}>Contact</a>
 				</Link>
 			</menu>
-			<button className={iconClass} onClick={toggleMenu}>
+			<button className={iconClass} onClick={toggleMenu} aria-label='Open navigation menu'>
 				<div className={styles.bar2} />
 				<div className={styles.bar3} />
 			</button>

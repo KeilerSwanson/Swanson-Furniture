@@ -21,7 +21,7 @@ export default function Contact() {
 		let errorCount = 0
 		for (let i = 0; i < inputs.length; i++) {
 			if (inputs[i].value.length === 0) {
-				inputs[i].style.cssText = `border-bottom: solid 2px goldenrod;`
+				inputs[i].style.cssText = `border-bottom: solid 2px var(--red);`
 				errorCount += 1
 			} else {
 				inputs[i].style.cssText = 'border-bottom: solid 2px black;'
@@ -110,7 +110,11 @@ export default function Contact() {
 					/>
 					<div className={styles.buttons}>
 						<a className={styles.call} href='tel:+1678-522-7026'>Call</a>
-						<button className={submitClass} onClick={submitForm}>
+						<button 
+							className={submitClass} 
+							onClick={submitForm} 
+							aria-label='Submit form'
+						>
 							{loading ? <LoadingSpinner /> : 'Send'}
 						</button>
 					</div>

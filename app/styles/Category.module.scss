@@ -11,8 +11,8 @@
 }
 
 .title {
-	@include typography.logo;
-	margin-bottom: 5%;
+	@include typography.med;
+	margin-bottom: 2rem;
 }
 
 .images {
@@ -25,9 +25,6 @@
 @media screen and (min-width: 768px) {
 	.category {
 		margin-bottom: 30%;
-	}
-	.title {
-		margin-bottom: 2.5%;
 	}
 	.images {
 		grid-template-columns: 1fr 1fr 1fr;

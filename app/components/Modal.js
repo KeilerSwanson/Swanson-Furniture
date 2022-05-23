@@ -8,7 +8,7 @@ export default function Modal({ url, closeModal }) {
 		<div className={modalClass} onClick={closeModal}>
 			<nav className={styles.nav}>
 				<h1 className={styles.dummyLogo}>Swanson Furniture</h1>
-				<button className={styles.close}>
+				<button className={styles.close} aria-label='Close image modal'>
 					<div className={styles.bar1} />
 					<div className={styles.bar2} />
 				</button>
